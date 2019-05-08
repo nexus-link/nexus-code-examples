@@ -1,4 +1,4 @@
-﻿namespace BusinessApi.Contracts.Events
+﻿namespace BusinessApi.Contracts.Capabilities.Integration.Model
 {
     /// <summary>
     /// Metadata for an event

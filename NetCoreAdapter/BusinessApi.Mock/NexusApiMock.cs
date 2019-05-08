@@ -3,7 +3,7 @@
 namespace BusinessApi.Mock
 {
     /// <inheritdoc />
-    public class NexusApiMock : INexusApi
+    public class NexusApiMock : IIntegrationCapability
     {
         /// <inheritdoc />
         public NexusApiMock()

@@ -1,4 +1,4 @@
-﻿namespace BusinessApi.Contracts.Events
+﻿namespace BusinessApi.Contracts.Capabilities.Integration.Model
 {
     /// <summary>
     /// Metadata that are needed for publishing events.

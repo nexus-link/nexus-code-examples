@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using BusinessApi.Contracts.Capabilities.Integration;
+using BusinessApi.Contracts.Capabilities.Integration.Model;
 using BusinessApi.Contracts.Events;
 using Newtonsoft.Json;
 

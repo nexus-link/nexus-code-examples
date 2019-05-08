@@ -3,7 +3,7 @@ using Crm.System.Contract;
 
 namespace Crm.NexusAdapter.Service.Adapter.Logic.OnBoarding
 {
-    public class OnBoardingLogic : IOnBoardingService
+    public class OnBoardingLogic : IOnBoardingCapability
     {
         public OnBoardingLogic(ICrmSystem system)
         {

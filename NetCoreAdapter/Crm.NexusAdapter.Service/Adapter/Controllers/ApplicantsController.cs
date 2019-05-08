@@ -14,13 +14,13 @@ namespace Crm.NexusAdapter.Service.Adapter.Controllers
     [ApiController]
     public class ApplicantsController : ControllerBase, IApplicantService
     {
-        private readonly IOnBoardingService _capability;
+        private readonly IOnBoardingCapability _capability;
 
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="capability">The logic layer</param>
-        public ApplicantsController(IOnBoardingService capability)
+        public ApplicantsController(IOnBoardingCapability capability)
         {
             _capability = capability;
         }

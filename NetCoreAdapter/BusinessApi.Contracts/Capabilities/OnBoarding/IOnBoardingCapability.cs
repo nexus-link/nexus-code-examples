@@ -3,7 +3,7 @@
     /// <summary>
     /// The CRM capability
     /// </summary>
-    public interface IOnBoardingService
+    public interface IOnBoardingCapability
     {
         IApplicantService ApplicantService { get; }
         IMemberService MemberService { get; }
