@@ -1,34 +1,18 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using BusinessApi.Contracts.Capabilities.OnBoarding;
-using BusinessApi.Contracts.Capabilities.OnBoarding.Model;
+﻿using BusinessApi.Contracts.Capabilities.OnBoarding;
+using BusinessApi.Controllers.Capabilities.OnBoarding;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Crm.NexusAdapter.Service.Adapter.Controllers
 {
-    /// <summary>
-    /// Service implementation of <see cref="IMemberService"/>
-    /// </summary>
+    /// <inheritdoc />
     [Route("api/[controller]")]
     [ApiController]
-    public class MembersController : ControllerBase, IMemberService
+    public class MembersController : MembersControllerTemplate
     {
-        private readonly IOnBoardingCapability _capability;
-
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        /// <param name="capability">The logic layer</param>
-        public MembersController(IOnBoardingCapability capability)
-        {
-            _capability = capability;
-        }
-
         /// <inheritdoc />
-        [HttpGet]
-        public async Task<IEnumerable<Member>> ReadAllAsync()
+        public MembersController(IOnBoardingCapability capability)
+        :base(capability)
         {
-            return await _capability.MemberService.ReadAllAsync();
         }
     }
 }

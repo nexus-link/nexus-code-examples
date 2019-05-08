@@ -5,43 +5,15 @@
     </assembly>
     <members>
         <member name="T:Crm.NexusAdapter.Service.Adapter.Controllers.ApplicantsController">
-            <summary>
-            Service implementation of <see cref="T:BusinessApi.Contracts.Capabilities.OnBoarding.IApplicantService"/>
-            </summary>
+            <inheritdoc />
         </member>
         <member name="M:Crm.NexusAdapter.Service.Adapter.Controllers.ApplicantsController.#ctor(BusinessApi.Contracts.Capabilities.OnBoarding.IOnBoardingCapability)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="capability">The logic layer</param>
-        </member>
-        <member name="M:Crm.NexusAdapter.Service.Adapter.Controllers.ApplicantsController.ReadAllAsync">
-            <inheritdoc />
-        </member>
-        <member name="M:Crm.NexusAdapter.Service.Adapter.Controllers.ApplicantsController.CreateAsync(BusinessApi.Contracts.Capabilities.OnBoarding.Model.Applicant)">
-            <inheritdoc />
-        </member>
-        <member name="M:Crm.NexusAdapter.Service.Adapter.Controllers.ApplicantsController.ApproveAsync(System.String)">
-            <inheritdoc />
-        </member>
-        <member name="M:Crm.NexusAdapter.Service.Adapter.Controllers.ApplicantsController.RejectAsync(System.String)">
-            <inheritdoc />
-        </member>
-        <member name="M:Crm.NexusAdapter.Service.Adapter.Controllers.ApplicantsController.WithdrawAsync(System.String)">
             <inheritdoc />
         </member>
         <member name="T:Crm.NexusAdapter.Service.Adapter.Controllers.MembersController">
-            <summary>
-            Service implementation of <see cref="T:BusinessApi.Contracts.Capabilities.OnBoarding.IMemberService"/>
-            </summary>
+            <inheritdoc />
         </member>
         <member name="M:Crm.NexusAdapter.Service.Adapter.Controllers.MembersController.#ctor(BusinessApi.Contracts.Capabilities.OnBoarding.IOnBoardingCapability)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="capability">The logic layer</param>
-        </member>
-        <member name="M:Crm.NexusAdapter.Service.Adapter.Controllers.MembersController.ReadAllAsync">
             <inheritdoc />
         </member>
         <member name="M:Crm.NexusAdapter.Service.Adapter.Logic.AdapterServiceForSystem.LeadWasQualified(System.Guid,System.Guid,System.DateTimeOffset)">

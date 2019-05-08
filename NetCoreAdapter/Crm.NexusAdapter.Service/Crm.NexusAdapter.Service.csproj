@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BusinessApi.Contracts\BusinessApi.Contracts.csproj" />
+    <ProjectReference Include="..\BusinessApi.Controllers\BusinessApi.Controllers.csproj" />
     <ProjectReference Include="..\BusinessApi.Sdk\BusinessApi.Sdk.csproj" />
     <ProjectReference Include="..\Crm.NexusAdapter.Contract\Crm.NexusAdapter.Contract.csproj" />
     <ProjectReference Include="..\Crm.System\Crm.System.csproj" />
