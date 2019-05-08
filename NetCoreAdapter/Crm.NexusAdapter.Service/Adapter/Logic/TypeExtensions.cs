@@ -3,7 +3,7 @@ using Nexus.Link.Libraries.Core.Assert;
 
 namespace Crm.NexusAdapter.Service.Adapter.Logic
 {
-    public static class TypeExtensions
+    internal static class TypeExtensions
     {
         public static string ToIdString(this Guid source)
         {

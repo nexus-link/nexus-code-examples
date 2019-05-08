@@ -16,14 +16,14 @@ namespace BusinessApi.Contracts.Capabilities.OnBoarding
         Task<IEnumerable<Applicant>> ReadAllAsync();
 
         /// <summary>
-        /// Add one application
+        /// Add one applicant
         /// </summary>
         /// <param name="applicant">Data for the applicant</param>
         /// <returns>The id for the newly created customer</returns>
         Task<string> CreateAsync(Applicant applicant);
 
         /// <summary>
-        /// Approve an application to become a member
+        /// Approve an applicant to become a member
         /// </summary>
         /// <param name="id">The id of the applicant to approve.</param>
         /// <returns>The internal id of the new member record.</returns>
