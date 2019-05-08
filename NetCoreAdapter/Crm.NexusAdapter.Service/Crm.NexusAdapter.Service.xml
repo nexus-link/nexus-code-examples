@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Crm.NexusAdapter.Service</name>
+    </assembly>
+    <members>
+        <member name="T:Crm.NexusAdapter.Service.Adapter.Controllers.ApplicantsController">
+            <summary>
+            Service implementation of <see cref="T:BusinessApi.Contracts.Capabilities.OnBoarding.IApplicantService"/>
+            </summary>
+        </member>
+        <member name="M:Crm.NexusAdapter.Service.Adapter.Controllers.ApplicantsController.#ctor(BusinessApi.Contracts.Capabilities.OnBoarding.IOnBoardingService)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="capability">The logic layer</param>
+        </member>
+        <member name="M:Crm.NexusAdapter.Service.Adapter.Controllers.ApplicantsController.ReadAllAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Crm.NexusAdapter.Service.Adapter.Controllers.ApplicantsController.CreateAsync(BusinessApi.Contracts.Capabilities.OnBoarding.Model.Applicant)">
+            <inheritdoc />
+        </member>
+        <member name="M:Crm.NexusAdapter.Service.Adapter.Controllers.ApplicantsController.ApproveAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Crm.NexusAdapter.Service.Adapter.Controllers.ApplicantsController.RejectAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Crm.NexusAdapter.Service.Adapter.Controllers.ApplicantsController.WithdrawAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:Crm.NexusAdapter.Service.Adapter.Controllers.MembersController">
+            <summary>
+            Service implementation of <see cref="T:BusinessApi.Contracts.Capabilities.OnBoarding.IMemberService"/>
+            </summary>
+        </member>
+        <member name="M:Crm.NexusAdapter.Service.Adapter.Controllers.MembersController.#ctor(BusinessApi.Contracts.Capabilities.OnBoarding.IOnBoardingService)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="capability">The logic layer</param>
+        </member>
+        <member name="M:Crm.NexusAdapter.Service.Adapter.Controllers.MembersController.ReadAllAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Crm.NexusAdapter.Service.Adapter.Logic.AdapterServiceForSystem.LeadWasQualified(System.Guid,System.Guid,System.DateTimeOffset)">
+            <inheritdoc />
+        </member>
+        <member name="T:Crm.NexusAdapter.Service.Adapter.Logic.OnBoarding.ApplicantLogic">
+            <summary>
+            Implements logic for of <see cref="T:BusinessApi.Contracts.Capabilities.OnBoarding.IApplicantService"/>
+            </summary>
+        </member>
+        <member name="M:Crm.NexusAdapter.Service.Adapter.Logic.OnBoarding.ApplicantLogic.#ctor(Crm.System.Contract.ICrmSystem)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Crm.NexusAdapter.Service.Adapter.Logic.OnBoarding.ApplicantLogic.ReadAllAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Crm.NexusAdapter.Service.Adapter.Logic.OnBoarding.ApplicantLogic.CreateAsync(BusinessApi.Contracts.Capabilities.OnBoarding.Model.Applicant)">
+            <inheritdoc />
+        </member>
+        <member name="M:Crm.NexusAdapter.Service.Adapter.Logic.OnBoarding.ApplicantLogic.ApproveAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Crm.NexusAdapter.Service.Adapter.Logic.OnBoarding.ApplicantLogic.RejectAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Crm.NexusAdapter.Service.Adapter.Logic.OnBoarding.ApplicantLogic.WithdrawAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:Crm.NexusAdapter.Service.Adapter.Logic.OnBoarding.MemberLogic">
+            <summary>
+            Implements logic for of <see cref="T:BusinessApi.Contracts.Capabilities.OnBoarding.IMemberService"/>
+            </summary>
+        </member>
+        <member name="M:Crm.NexusAdapter.Service.Adapter.Logic.OnBoarding.MemberLogic.#ctor(Crm.System.Contract.ICrmSystem)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Crm.NexusAdapter.Service.Adapter.Logic.OnBoarding.MemberLogic.ReadAllAsync">
+            <inheritdoc />
+        </member>
+        <member name="P:Crm.NexusAdapter.Service.Adapter.Logic.OnBoarding.OnBoardingLogic.ApplicantService">
+            <inheritdoc />
+        </member>
+        <member name="P:Crm.NexusAdapter.Service.Adapter.Logic.OnBoarding.OnBoardingLogic.MemberService">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

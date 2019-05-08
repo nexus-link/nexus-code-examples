@@ -6,5 +6,3 @@ You can find more documentation aimed at developers at http://nexus.link/docs/de
 
 These are the available examples:
 * [ASP.NET Core Nexus adapter](NetCoreAdapter)
-
-

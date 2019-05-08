@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.489
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Crm.NexusAdapter.Service", "Crm.NexusAdapter.Service\Crm.NexusAdapter.Service.csproj", "{087E527F-E423-4728-80E7-809C18CAB6CA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FA277FC9-CA01-4262-857E-118E14CE1947}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crm.NexusAdapter.Contract", "Crm.NexusAdapter.Contract\Crm.NexusAdapter.Contract.csproj", "{29C029FF-2E5B-4323-9EDB-0BCB1573B30E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crm.System", "Crm.System\Crm.System.csproj", "{7F3EBE9A-B44C-4B48-9070-B405D9B0DEC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessApi.Mock", "BusinessApi.Mock\BusinessApi.Mock.csproj", "{943AD592-26EB-436D-A256-88C79C0E49C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessApi.Contracts", "BusinessApi.Contracts\BusinessApi.Contracts.csproj", "{CE680FC0-D08A-432F-9FEC-40FB869B166C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{087E527F-E423-4728-80E7-809C18CAB6CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{087E527F-E423-4728-80E7-809C18CAB6CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{087E527F-E423-4728-80E7-809C18CAB6CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{087E527F-E423-4728-80E7-809C18CAB6CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29C029FF-2E5B-4323-9EDB-0BCB1573B30E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29C029FF-2E5B-4323-9EDB-0BCB1573B30E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29C029FF-2E5B-4323-9EDB-0BCB1573B30E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29C029FF-2E5B-4323-9EDB-0BCB1573B30E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F3EBE9A-B44C-4B48-9070-B405D9B0DEC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F3EBE9A-B44C-4B48-9070-B405D9B0DEC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F3EBE9A-B44C-4B48-9070-B405D9B0DEC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F3EBE9A-B44C-4B48-9070-B405D9B0DEC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{943AD592-26EB-436D-A256-88C79C0E49C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{943AD592-26EB-436D-A256-88C79C0E49C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{943AD592-26EB-436D-A256-88C79C0E49C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{943AD592-26EB-436D-A256-88C79C0E49C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE680FC0-D08A-432F-9FEC-40FB869B166C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE680FC0-D08A-432F-9FEC-40FB869B166C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE680FC0-D08A-432F-9FEC-40FB869B166C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE680FC0-D08A-432F-9FEC-40FB869B166C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8484EFF1-A00F-4FA3-9B66-3B281028CAFA}
+	EndGlobalSection
+EndGlobal
