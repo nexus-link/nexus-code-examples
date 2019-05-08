@@ -1,8 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using BusinessApi.Contracts.Capabilities.OnBoarding;
 using BusinessApi.Contracts.Capabilities.OnBoarding.Model;
 using Microsoft.AspNetCore.Mvc;
+using Nexus.Link.Libraries.Core.Storage.Model;
 
 namespace BusinessApi.Controllers.Capabilities.OnBoarding
 {
@@ -25,9 +28,9 @@ namespace BusinessApi.Controllers.Capabilities.OnBoarding
         /// <inheritdoc />
         [HttpGet]
         [Route("")]
-        public async Task<IEnumerable<Member>> ReadAllAsync()
+        public async Task<IEnumerable<Member>> ReadAllAsync(int limit = 2147483647, CancellationToken token = new CancellationToken())
         {
-            return await Capability.MemberService.ReadAllAsync();
+            return await Capability.MemberService.ReadAllAsync(limit, token);
         }
     }
 }
