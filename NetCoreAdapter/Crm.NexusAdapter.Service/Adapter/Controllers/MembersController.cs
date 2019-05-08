@@ -13,13 +13,13 @@ namespace Crm.NexusAdapter.Service.Adapter.Controllers
     [ApiController]
     public class MembersController : ControllerBase, IMemberService
     {
-        private readonly IOnBoardingService _capability;
+        private readonly IOnBoardingCapability _capability;
 
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="capability">The logic layer</param>
-        public MembersController(IOnBoardingService capability)
+        public MembersController(IOnBoardingCapability capability)
         {
             _capability = capability;
         }

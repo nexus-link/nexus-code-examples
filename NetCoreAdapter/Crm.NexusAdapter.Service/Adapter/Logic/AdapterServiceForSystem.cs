@@ -8,11 +8,11 @@ namespace Crm.NexusAdapter.Service.Adapter.Logic
 {
     public class AdapterServiceForSystem : IAdapterService
     {
-        private readonly INexusApi _nexusApi;
+        private readonly IIntegrationCapability _integrationCapability;
 
-        public AdapterServiceForSystem(INexusApi nexusApi)
+        public AdapterServiceForSystem(IIntegrationCapability integrationCapability)
         {
-            _nexusApi = nexusApi;
+            _integrationCapability = integrationCapability;
         }
 
         /// <inheritdoc />
@@ -23,7 +23,7 @@ namespace Crm.NexusAdapter.Service.Adapter.Logic
                 MemberId = contactId.ToIdString(),
                 ApprovedAt = approvedAt.ToIso8061Time()
             };
-            await _nexusApi.BusinessEventService.PublishAsync(@event);
+            await _integrationCapability.BusinessEventService.PublishAsync(@event);
         }
     }
 }

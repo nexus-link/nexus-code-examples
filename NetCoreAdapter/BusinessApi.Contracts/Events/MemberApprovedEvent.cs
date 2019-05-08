@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using BusinessApi.Contracts.Capabilities.Integration.Model;
+using Newtonsoft.Json;
 
 namespace BusinessApi.Contracts.Events
 {

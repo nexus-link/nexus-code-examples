@@ -2,7 +2,7 @@
 using System.IO;
 using BusinessApi.Contracts.Capabilities.Integration;
 using BusinessApi.Contracts.Capabilities.OnBoarding;
-using BusinessApi.Mock;
+using BusinessApi.Sdk;
 using Crm.NexusAdapter.Contract;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -31,10 +31,10 @@ namespace Crm.NexusAdapter.Service
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddSingleton<INexusApi, NexusApiMock>();
+            services.AddSingleton<IIntegrationCapability, NexusApiMock>();
             services.AddSingleton<IAdapterService, AdapterServiceForSystem>();
             services.AddSingleton<ICrmSystem, CrmSystemMock>();
-            services.AddScoped<IOnBoardingService, OnBoardingLogic>();
+            services.AddScoped<IOnBoardingCapability, OnBoardingLogic>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "Crm.NexusAdapter", Version = "v1" });

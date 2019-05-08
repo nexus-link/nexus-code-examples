@@ -9,7 +9,7 @@
             Service implementation of <see cref="T:BusinessApi.Contracts.Capabilities.OnBoarding.IApplicantService"/>
             </summary>
         </member>
-        <member name="M:Crm.NexusAdapter.Service.Adapter.Controllers.ApplicantsController.#ctor(BusinessApi.Contracts.Capabilities.OnBoarding.IOnBoardingService)">
+        <member name="M:Crm.NexusAdapter.Service.Adapter.Controllers.ApplicantsController.#ctor(BusinessApi.Contracts.Capabilities.OnBoarding.IOnBoardingCapability)">
             <summary>
             Constructor
             </summary>
@@ -35,7 +35,7 @@
             Service implementation of <see cref="T:BusinessApi.Contracts.Capabilities.OnBoarding.IMemberService"/>
             </summary>
         </member>
-        <member name="M:Crm.NexusAdapter.Service.Adapter.Controllers.MembersController.#ctor(BusinessApi.Contracts.Capabilities.OnBoarding.IOnBoardingService)">
+        <member name="M:Crm.NexusAdapter.Service.Adapter.Controllers.MembersController.#ctor(BusinessApi.Contracts.Capabilities.OnBoarding.IOnBoardingCapability)">
             <summary>
             Constructor
             </summary>

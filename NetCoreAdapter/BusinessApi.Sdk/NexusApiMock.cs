@@ -1,6 +1,6 @@
 ﻿using BusinessApi.Contracts.Capabilities.Integration;
 
-namespace BusinessApi.Mock
+namespace BusinessApi.Sdk
 {
     /// <inheritdoc />
     public class NexusApiMock : IIntegrationCapability
