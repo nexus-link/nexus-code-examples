@@ -4,7 +4,7 @@ using BusinessApi.Contracts.Capabilities.Integration;
 using BusinessApi.Contracts.Events;
 using Crm.NexusAdapter.Contract;
 
-namespace Crm.NexusAdapter.Service.Adapter.Logic
+namespace Crm.NexusAdapter.Service.Logic
 {
     public class AdapterServiceForSystem : IAdapterService
     {

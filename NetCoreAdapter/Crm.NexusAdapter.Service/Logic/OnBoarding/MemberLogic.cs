@@ -5,9 +5,8 @@ using System.Threading.Tasks;
 using BusinessApi.Contracts.Capabilities.OnBoarding;
 using BusinessApi.Contracts.Capabilities.OnBoarding.Model;
 using Crm.System.Contract;
-using NotImplementedException = System.NotImplementedException;
 
-namespace Crm.NexusAdapter.Service.Adapter.Logic.OnBoarding
+namespace Crm.NexusAdapter.Service.Logic.OnBoarding
 {
     /// <summary>
     /// Implements logic for of <see cref="IMemberService"/>

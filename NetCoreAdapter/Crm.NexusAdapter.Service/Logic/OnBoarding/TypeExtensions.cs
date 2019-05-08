@@ -1,7 +1,7 @@
 ﻿using BusinessApi.Contracts.Capabilities.OnBoarding.Model;
 using Crm.System.Contract.Model;
 
-namespace Crm.NexusAdapter.Service.Adapter.Logic.OnBoarding
+namespace Crm.NexusAdapter.Service.Logic.OnBoarding
 {
     public static class TypeExtensions
     {

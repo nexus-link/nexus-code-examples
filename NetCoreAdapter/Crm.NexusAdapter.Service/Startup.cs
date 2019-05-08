@@ -4,6 +4,8 @@ using BusinessApi.Contracts.Capabilities.Integration;
 using BusinessApi.Contracts.Capabilities.OnBoarding;
 using BusinessApi.Sdk;
 using Crm.NexusAdapter.Contract;
+using Crm.NexusAdapter.Service.Logic;
+using Crm.NexusAdapter.Service.Logic.OnBoarding;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -11,14 +13,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Nexus.Link.Libraries.Web.AspNet.Pipe.Inbound;
 using Swashbuckle.AspNetCore.Swagger;
-using Crm.NexusAdapter.Service.Adapter.Logic;
-using Crm.NexusAdapter.Service.Adapter.Logic.OnBoarding;
 using Crm.System.Contract;
 using Crm.System.Logic;
 
 namespace Crm.NexusAdapter.Service
 {
-    public class Startup
+    internal class Startup
     {
         public Startup(IConfiguration configuration)
         {

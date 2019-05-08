@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using BusinessApi.Contracts.Capabilities.OnBoarding.Model;
+﻿using BusinessApi.Contracts.Capabilities.OnBoarding.Model;
 using Nexus.Link.Libraries.Crud.Interfaces;
 
 namespace BusinessApi.Contracts.Capabilities.OnBoarding

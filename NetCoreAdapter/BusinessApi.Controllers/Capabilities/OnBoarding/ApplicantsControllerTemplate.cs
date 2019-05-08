@@ -47,7 +47,7 @@ namespace BusinessApi.Controllers.Capabilities.OnBoarding
         public async Task<string> ApproveAsync(string id, CancellationToken token = new CancellationToken())
         {
             ServiceContract.RequireNotNullOrWhiteSpace(id, nameof(id));
-            return await Capability.ApplicantService.ApproveAsync(id);
+            return await Capability.ApplicantService.ApproveAsync(id, token);
         }
 
         /// <inheritdoc />
@@ -56,7 +56,7 @@ namespace BusinessApi.Controllers.Capabilities.OnBoarding
         public async Task RejectAsync(string id, CancellationToken token = new CancellationToken())
         {
             ServiceContract.RequireNotNullOrWhiteSpace(id, nameof(id));
-            await Capability.ApplicantService.RejectAsync(id);
+            await Capability.ApplicantService.RejectAsync(id, token);
         }
 
         /// <inheritdoc />
@@ -65,7 +65,7 @@ namespace BusinessApi.Controllers.Capabilities.OnBoarding
         public async Task WithdrawAsync(string id, CancellationToken token = new CancellationToken())
         {
             ServiceContract.RequireNotNullOrWhiteSpace(id, nameof(id));
-            await Capability.ApplicantService.WithdrawAsync(id);
+            await Capability.ApplicantService.WithdrawAsync(id, token);
         }
     }
 }
