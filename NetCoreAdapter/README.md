@@ -41,15 +41,21 @@ This is the only code that you really need to focus on. The rest of the projects
 
 ### BusinessApi.Contracts
 
-Contains the contracts that are provided by the *Nexus integration team*. The contracts are grouped into *capabilities* that are implemented by the different adapters. An adapter will implement a few of them, often only one. In the example we have two capability contracts; `Integration` and `OnBoarding`.
+Contains all contracts for the organization. The contracts are grouped into *capabilities* that are implemented by the different adapters. An adapter will implement a few of them, often only one. In the example we have two capability contracts; `Integration` and `OnBoarding`.
 
-In reality the contracts would be provided as a NuGet package.
+In reality the contracts would be provided as a NuGet package by the *Nexus integration team*.
+
+### BusinessApi.Controllers
+
+Contains the controller templates that makes it really easy to make the adapter controllers, because you simply inherit from these template controllers.
+
+In reality the controller templates would be provided as a NuGet package by the *Nexus integration team*.
 
 ### BusinessApi.Sdk
 
 If the adapter wants to access functionality from another capability, it has to go through the *business API*. 
 
-In reality this would be provided as a NuGet package and would call the services in the business API for you. The business API and its SDK is developed by the Nexus integration team.
+In reality this would be provided as a NuGet package by the *Nexus integration team* and would call the services in the *business API* for you. The business API and its SDK is developed by the Nexus integration team.
 In the example we provide a mock implementation instead of calling an API.
 
 ### Crm.NexusAdapter.Contract

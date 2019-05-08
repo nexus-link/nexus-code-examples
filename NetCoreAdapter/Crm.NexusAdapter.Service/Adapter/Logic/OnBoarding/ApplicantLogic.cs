@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using BusinessApi.Contracts.Capabilities.OnBoarding;
 using BusinessApi.Contracts.Capabilities.OnBoarding.Model;
 using Crm.System.Contract;
 using Crm.System.Contract.Model;
+using NotImplementedException = System.NotImplementedException;
 
 namespace Crm.NexusAdapter.Service.Adapter.Logic.OnBoarding
 {
@@ -24,7 +26,15 @@ namespace Crm.NexusAdapter.Service.Adapter.Logic.OnBoarding
         }
 
         /// <inheritdoc />
-        public async Task<IEnumerable<Applicant>> ReadAllAsync()
+        public async Task<string> CreateAsync(Applicant item, CancellationToken token = new CancellationToken())
+        {
+            var lead = new Lead().From(item);
+            var id = await _crmSystem.LeadFunctionality.CreateAsync(lead);
+            return id.ToIdString();
+        }
+
+        /// <inheritdoc />
+        public async Task<IEnumerable<Applicant>> ReadAllAsync(int limit = 2147483647, CancellationToken token = new CancellationToken())
         {
             var leads = await _crmSystem.LeadFunctionality.ReadAllAsync();
             var applicants = leads
@@ -34,28 +44,20 @@ namespace Crm.NexusAdapter.Service.Adapter.Logic.OnBoarding
         }
 
         /// <inheritdoc />
-        public async Task<string> CreateAsync(Applicant applicant)
-        {
-            var lead = new Lead().From(applicant);
-            var id = await _crmSystem.LeadFunctionality.CreateAsync(lead);
-            return id.ToIdString();
-        }
-
-        /// <inheritdoc />
-        public async Task<string> ApproveAsync(string id)
+        public async Task<string> ApproveAsync(string id, CancellationToken token = default(CancellationToken))
         {
             var memberId = await _crmSystem.LeadFunctionality.QualifyAsync(id.ToGuid());
             return memberId.ToIdString();
         }
 
         /// <inheritdoc />
-        public async Task RejectAsync(string id)
+        public async Task RejectAsync(string id, CancellationToken token = default(CancellationToken))
         {
             await _crmSystem.LeadFunctionality.RejectAsync(id.ToGuid(), "Application rejected.");
         }
 
         /// <inheritdoc />
-        public async Task WithdrawAsync(string id)
+        public async Task WithdrawAsync(string id, CancellationToken token = default(CancellationToken))
         {
             await _crmSystem.LeadFunctionality.RejectAsync(id.ToGuid(), "Application withdrawn.");
         }
