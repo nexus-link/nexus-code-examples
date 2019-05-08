@@ -1,6 +1,5 @@
 ﻿using System.Threading.Tasks;
 using BusinessApi.Contracts.Capabilities.Integration.Model;
-using BusinessApi.Contracts.Events;
 
 namespace BusinessApi.Contracts.Capabilities.Integration
 {

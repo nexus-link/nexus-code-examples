@@ -21,7 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BusinessApi.Contracts\BusinessApi.Contracts.csproj" />
-    <ProjectReference Include="..\BusinessApi.Mock\BusinessApi.Mock.csproj" />
+    <ProjectReference Include="..\BusinessApi.Sdk\BusinessApi.Sdk.csproj" />
     <ProjectReference Include="..\Crm.NexusAdapter.Contract\Crm.NexusAdapter.Contract.csproj" />
     <ProjectReference Include="..\Crm.System\Crm.System.csproj" />
   </ItemGroup>
