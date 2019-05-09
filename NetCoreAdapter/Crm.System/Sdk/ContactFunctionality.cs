@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Crm.System.Contract;
 using Crm.System.Contract.Model;
 
-namespace Crm.System.Logic
+namespace Crm.System.Sdk
 {
     public class ContactFunctionality : IContactFunctionality
     {

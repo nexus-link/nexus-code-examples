@@ -14,7 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Nexus.Link.Libraries.Web.AspNet.Pipe.Inbound;
 using Swashbuckle.AspNetCore.Swagger;
 using Crm.System.Contract;
-using Crm.System.Logic;
+using Crm.System.Sdk;
 
 namespace Crm.NexusAdapter.Service
 {

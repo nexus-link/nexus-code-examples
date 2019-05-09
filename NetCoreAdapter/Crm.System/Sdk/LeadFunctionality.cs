@@ -7,7 +7,7 @@ using Crm.System.Contract;
 using Crm.System.Contract.Exceptions;
 using Crm.System.Contract.Model;
 
-namespace Crm.System.Logic
+namespace Crm.System.Sdk
 {
     public class LeadFunctionality : ILeadFunctionality
     {

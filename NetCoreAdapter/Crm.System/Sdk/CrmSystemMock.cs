@@ -1,7 +1,7 @@
 ﻿using Crm.NexusAdapter.Contract;
 using Crm.System.Contract;
 
-namespace Crm.System.Logic
+namespace Crm.System.Sdk
 {
     public class CrmSystemMock : ICrmSystem
     {
