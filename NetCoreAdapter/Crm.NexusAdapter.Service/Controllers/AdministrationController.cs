@@ -11,8 +11,10 @@ using Nexus.Link.Libraries.Core.Error.Logic;
 namespace Crm.NexusAdapter.Service.Controllers
 {
     /// <summary>
-    /// Service implementation of <see cref="IApplicantService"/>
+    /// Administrative services.
     /// </summary>
+    [Route("api/[controller]")]
+    [ApiController]
     public class AdministrationController : ControllerBase
     {
         private readonly IOnBoardingCapability _capability;

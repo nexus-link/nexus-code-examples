@@ -70,7 +70,7 @@ namespace BusinessApi.Controllers.Capabilities.OnBoarding
         }
 
         /// <inheritdoc />
-        [HttpPost]
+        [HttpDelete]
         [Route("")]
         public async Task DeleteAllAsync(CancellationToken token = new CancellationToken())
         {

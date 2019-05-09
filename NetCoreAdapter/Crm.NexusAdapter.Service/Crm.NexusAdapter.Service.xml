@@ -4,14 +4,9 @@
         <name>Crm.NexusAdapter.Service</name>
     </assembly>
     <members>
-        <member name="T:Crm.NexusAdapter.Service.Adapter.Controllers.MetaDataController">
-            <summary>
-            Service implementation of <see cref="T:BusinessApi.Contracts.Capabilities.OnBoarding.IApplicantService"/>
-            </summary>
-        </member>
         <member name="T:Crm.NexusAdapter.Service.Controllers.AdministrationController">
             <summary>
-            Service implementation of <see cref="T:BusinessApi.Contracts.Capabilities.OnBoarding.IApplicantService"/>
+            Administrative services.
             </summary>
         </member>
         <member name="M:Crm.NexusAdapter.Service.Controllers.AdministrationController.#ctor(BusinessApi.Contracts.Capabilities.OnBoarding.IOnBoardingCapability)">
