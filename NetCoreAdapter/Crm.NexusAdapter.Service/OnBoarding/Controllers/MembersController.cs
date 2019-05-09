@@ -2,16 +2,16 @@
 using BusinessApi.Controllers.Capabilities.OnBoarding;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Crm.NexusAdapter.Service.Controllers
+namespace Crm.NexusAdapter.Service.OnBoarding.Controllers
 {
     /// <inheritdoc />
     [Route("api/[controller]")]
     [ApiController]
-    public class ApplicantsController : ApplicantsControllerTemplate
+    public class MembersController : MembersControllerTemplate
     {
         /// <inheritdoc />
-        public ApplicantsController(IOnBoardingCapability capability)
-            : base(capability)
+        public MembersController(IOnBoardingCapability capability)
+        :base(capability)
         {
         }
     }

@@ -4,6 +4,8 @@ using System.Threading.Tasks;
 using BusinessApi.Contracts.Capabilities.OnBoarding;
 using BusinessApi.Contracts.Capabilities.OnBoarding.Model;
 using Microsoft.AspNetCore.Mvc;
+using Nexus.Link.Libraries.Core.Application;
+using Nexus.Link.Libraries.Core.Assert;
 
 namespace BusinessApi.Controllers.Capabilities.OnBoarding
 {
@@ -29,6 +31,14 @@ namespace BusinessApi.Controllers.Capabilities.OnBoarding
         public async Task<IEnumerable<Member>> ReadAllAsync(int limit = 2147483647, CancellationToken token = new CancellationToken())
         {
             return await Capability.MemberService.ReadAllAsync(limit, token);
+        }
+
+        /// <inheritdoc />
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task DeleteAsync(string id, CancellationToken token = new CancellationToken())
+        {
+            await Capability.MemberService.DeleteAsync(id, token);
         }
     }
 }

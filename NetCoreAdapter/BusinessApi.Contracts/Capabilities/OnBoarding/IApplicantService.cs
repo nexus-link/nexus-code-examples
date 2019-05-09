@@ -8,7 +8,7 @@ namespace BusinessApi.Contracts.Capabilities.OnBoarding
     /// <summary>
     /// Methods for dealing with an applicant.
     /// </summary>
-    public interface IApplicantService : ICreate<Applicant, string>, IReadAll<Applicant, string>
+    public interface IApplicantService : ICreate<Applicant, string>, IReadAll<Applicant, string>, IDeleteAll
     {
         /// <summary>
         /// Approve an applicant to become a member

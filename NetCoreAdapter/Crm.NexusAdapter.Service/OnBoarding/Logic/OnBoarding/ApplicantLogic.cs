@@ -6,8 +6,11 @@ using BusinessApi.Contracts.Capabilities.OnBoarding;
 using BusinessApi.Contracts.Capabilities.OnBoarding.Model;
 using Crm.System.Contract;
 using Crm.System.Contract.Model;
+using Nexus.Link.Libraries.Core.Application;
+using Nexus.Link.Libraries.Core.Assert;
+using NotImplementedException = System.NotImplementedException;
 
-namespace Crm.NexusAdapter.Service.Logic.OnBoarding
+namespace Crm.NexusAdapter.Service.OnBoarding.Logic.OnBoarding
 {
     /// <summary>
     /// Implements logic for of <see cref="IApplicantService"/>
@@ -59,6 +62,13 @@ namespace Crm.NexusAdapter.Service.Logic.OnBoarding
         public async Task WithdrawAsync(string id, CancellationToken token = default(CancellationToken))
         {
             await _crmSystem.LeadFunctionality.RejectAsync(id.ToGuid(), "Application withdrawn.");
+        }
+
+        /// <inheritdoc />
+        public async Task DeleteAllAsync(CancellationToken token = new CancellationToken())
+        {
+            InternalContract.Require(!FulcrumApplication.IsInProductionOrProductionSimulation, $"This method can't be called in production.");
+            await _crmSystem.LeadFunctionality.DeleteAll();
         }
     }
 }

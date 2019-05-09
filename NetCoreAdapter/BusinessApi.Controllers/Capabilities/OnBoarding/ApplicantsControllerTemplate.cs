@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using BusinessApi.Contracts.Capabilities.OnBoarding;
 using BusinessApi.Contracts.Capabilities.OnBoarding.Model;
 using Microsoft.AspNetCore.Mvc;
+using Nexus.Link.Libraries.Core.Application;
 using Nexus.Link.Libraries.Core.Assert;
 
 namespace BusinessApi.Controllers.Capabilities.OnBoarding
@@ -66,6 +67,15 @@ namespace BusinessApi.Controllers.Capabilities.OnBoarding
         {
             ServiceContract.RequireNotNullOrWhiteSpace(id, nameof(id));
             await Capability.ApplicantService.WithdrawAsync(id, token);
+        }
+
+        /// <inheritdoc />
+        [HttpPost]
+        [Route("")]
+        public async Task DeleteAllAsync(CancellationToken token = new CancellationToken())
+        {
+            ServiceContract.Require(!FulcrumApplication.IsInProductionOrProductionSimulation, $"This method can't be called in production.");
+            await Capability.ApplicantService.DeleteAllAsync(token);
         }
     }
 }

@@ -35,34 +35,39 @@ The CRM system is a standard system that has another entity model and a business
 
 The solution consists of the following projects:
 
-### Crm.NexusAdapter.Service
+### Adapter Code
 
-This is the only code that you really need to focus on. The rest of the projects are mock-ups of things that either would be provided to you as NuGet packages or code that would be applications of their own.
+The code that actually is part of the adapter. All other projects represents code that normally is created outside the adapter by other developers than the adapter developer.
 
-### BusinessApi.Contracts
+#### Crm.NexusAdapter.Contract
+
+This part is optional, but the back-end system must call the adapter somehow whenever it wants to reach other parts of the digital platform. In this example this is the contract for those calls.
+
+#### Crm.NexusAdapter.Service
+
+This is where you put your main effort as a developer and the focus for this example.
+
+### External applications
+
+These projects represents code that normally would be their own separate applications.
+
+#### Crm.System
+
+This is the "back-end system" that the adapter is for. It represents the data persistence and the business logic for the capability. In reality the adapter would communicate with it in a way that is proprietary for that specific system.
+
+### Imported NuGets
+
+These projects represents code that normally would be provided as NuGet packages by the *Nexus integration team*.
+
+#### BusinessApi.Contracts
 
 Contains all contracts for the organization. The contracts are grouped into *capabilities* that are implemented by the different adapters. An adapter will implement a few of them, often only one. In the example we have two capability contracts; `Integration` and `OnBoarding`.
-
-In reality the contracts would be provided as a NuGet package by the *Nexus integration team*.
 
 ### BusinessApi.Controllers
 
 Contains the controller templates that makes it really easy to make the adapter controllers, because you simply inherit from these template controllers.
 
-In reality the controller templates would be provided as a NuGet package by the *Nexus integration team*.
+#### BusinessApi.Sdk
 
-### BusinessApi.Sdk
-
-If the adapter wants to access functionality from another capability, it has to go through the *business API*. 
-
-In reality this would be provided as a NuGet package by the *Nexus integration team* and would call the services in the *business API* for you. The business API and its SDK is developed by the Nexus integration team.
-In the example we provide a mock implementation instead of calling an API.
-
-### Crm.NexusAdapter.Contract
-
-This part is optional, but the back-end system must call the adapter somehow whenever it wants to reach other parts of the digital platform. In this example this is the contract for those calls.
-
-### Crm.System
-
-This is the "back-end system" that the adapter is for. In reality this would be an application of its own and the adapter would communicate with that system in a proprietary way.
+If the adapter wants to access functionality from another capability, it has to go through the *business API*. The SDK make that simple and hides the integration details. In reality this SDK would call the services in the *business API* for you, but here that functionality is mocked.
 

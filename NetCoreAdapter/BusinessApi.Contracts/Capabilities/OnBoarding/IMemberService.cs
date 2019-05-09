@@ -6,7 +6,7 @@ namespace BusinessApi.Contracts.Capabilities.OnBoarding
     /// <summary>
     /// Methods for dealing with a member
     /// </summary>
-    public interface IMemberService : IReadAll<Member, string>
+    public interface IMemberService : IReadAll<Member, string>, IDelete<string>
     {
     }
 }

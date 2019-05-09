@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Crm.System.Contract.Model;
 
@@ -14,5 +15,11 @@ namespace Crm.System.Contract
         /// </summary>
         /// <returns></returns>
         Task<IEnumerable<Contact>> ReadAllAsync();
+
+        /// <summary>
+        /// Delete a customer
+        /// </summary>
+        /// <param name="id">The id of the customer to delete.</param>
+        Task Delete(Guid id);
     }
 }

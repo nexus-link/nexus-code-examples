@@ -94,5 +94,12 @@ namespace Crm.System.Logic
                     throw new ProgrammersErrorException($"Unknown lead status: {lead.Status}");
             }
         }
+
+        /// <inheritdoc />
+        public Task DeleteAll()
+        {
+            Items.Clear();
+            return Task.CompletedTask;
+        }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using BusinessApi.Contracts.Capabilities.OnBoarding;
 using Crm.System.Contract;
 
-namespace Crm.NexusAdapter.Service.Logic.OnBoarding
+namespace Crm.NexusAdapter.Service.OnBoarding.Logic.OnBoarding
 {
     public class OnBoardingLogic : IOnBoardingCapability
     {
