@@ -31,7 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Adapter\Controllers\" />
+    <Folder Include="Capabilities\Adapter\Controllers\" />
   </ItemGroup>
 
 </Project>

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using BusinessApi.Contracts.Capabilities.OnBoarding;
 using BusinessApi.Contracts.Capabilities.OnBoarding.Model;
 using Crm.System.Contract;
+using Nexus.Link.Libraries.Core.Application;
 using Nexus.Link.Libraries.Core.Assert;
 using NotImplementedException = System.NotImplementedException;
 
@@ -38,6 +39,13 @@ namespace Crm.NexusAdapter.Service.OnBoarding.Logic.OnBoarding
         {
             InternalContract.RequireNotNullOrWhiteSpace(id, nameof(id));
             await _crmSystem.ContactFunctionality.Delete(id.ToGuid());
+        }
+
+        /// <inheritdoc />
+        public async Task DeleteAllAsync(CancellationToken token = new CancellationToken())
+        {
+            InternalContract.Require(!FulcrumApplication.IsInProductionOrProductionSimulation, $"This method can't be called in production.");
+            await _crmSystem.ContactFunctionality.DeleteAll();
         }
     }
 }

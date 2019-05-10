@@ -34,5 +34,12 @@ namespace Crm.System.Sdk
             if (item != null) Items.Remove(item);
             return Task.CompletedTask;
         }
+
+        /// <inheritdoc />
+        public Task DeleteAll()
+        {
+            Items.Clear();
+            return Task.CompletedTask;
+        }
     }
 }

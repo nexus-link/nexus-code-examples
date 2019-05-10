@@ -21,5 +21,11 @@ namespace Crm.System.Contract
         /// </summary>
         /// <param name="id">The id of the customer to delete.</param>
         Task Delete(Guid id);
+
+        /// <summary>
+        /// Delete all contacts.
+        /// </summary>
+        /// <remarks>This method really removes all contacts. Use with caution!</remarks>
+        Task DeleteAll();
     }
 }

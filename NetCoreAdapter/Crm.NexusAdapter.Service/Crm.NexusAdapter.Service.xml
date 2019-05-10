@@ -4,31 +4,6 @@
         <name>Crm.NexusAdapter.Service</name>
     </assembly>
     <members>
-        <member name="T:Crm.NexusAdapter.Service.Controllers.AdministrationController">
-            <summary>
-            Administrative services.
-            </summary>
-        </member>
-        <member name="M:Crm.NexusAdapter.Service.Controllers.AdministrationController.#ctor(BusinessApi.Contracts.Capabilities.OnBoarding.IOnBoardingCapability)">
-            <summary>
-            
-            </summary>
-            <param name="capability"></param>
-        </member>
-        <member name="M:Crm.NexusAdapter.Service.Controllers.AdministrationController.ResetAsync(System.Threading.CancellationToken)">
-            <summary>
-            Remove all members and applicants.
-            </summary>
-            <param name="token"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Crm.NexusAdapter.Service.Controllers.AdministrationController.SeedAsync(System.Threading.CancellationToken)">
-            <summary>
-            Add some members and applicants.
-            </summary>
-            <param name="token"></param>
-            <returns></returns>
-        </member>
         <member name="T:Crm.NexusAdapter.Service.OnBoarding.Controllers.ApplicantsController">
             <inheritdoc />
         </member>
@@ -88,11 +63,39 @@
         <member name="M:Crm.NexusAdapter.Service.OnBoarding.Logic.OnBoarding.MemberLogic.DeleteAsync(System.String,System.Threading.CancellationToken)">
             <inheritdoc />
         </member>
+        <member name="M:Crm.NexusAdapter.Service.OnBoarding.Logic.OnBoarding.MemberLogic.DeleteAllAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
         <member name="P:Crm.NexusAdapter.Service.OnBoarding.Logic.OnBoarding.OnBoardingLogic.ApplicantService">
             <inheritdoc />
         </member>
         <member name="P:Crm.NexusAdapter.Service.OnBoarding.Logic.OnBoarding.OnBoardingLogic.MemberService">
             <inheritdoc />
+        </member>
+        <member name="T:Crm.NexusAdapter.Service.Controllers.AdministrationController">
+            <summary>
+            Administrative services.
+            </summary>
+        </member>
+        <member name="M:Crm.NexusAdapter.Service.Controllers.AdministrationController.#ctor(BusinessApi.Contracts.Capabilities.OnBoarding.IOnBoardingCapability)">
+            <summary>
+            
+            </summary>
+            <param name="capability"></param>
+        </member>
+        <member name="M:Crm.NexusAdapter.Service.Controllers.AdministrationController.ResetAsync(System.Threading.CancellationToken)">
+            <summary>
+            Remove all members and applicants.
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Crm.NexusAdapter.Service.Controllers.AdministrationController.SeedAsync(System.Threading.CancellationToken)">
+            <summary>
+            Add some members and applicants.
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
         </member>
     </members>
 </doc>

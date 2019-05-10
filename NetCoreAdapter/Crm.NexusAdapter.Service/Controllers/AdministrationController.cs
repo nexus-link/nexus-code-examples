@@ -38,17 +38,9 @@ namespace Crm.NexusAdapter.Service.Controllers
         public async Task ResetAsync(CancellationToken token = new CancellationToken())
         {
             ServiceContract.Require(!FulcrumApplication.IsInProductionOrProductionSimulation, $"This method can't be called in production.");
-            var members = await _capability.MemberService.ReadAllAsync(int.MaxValue, token);
-            var taskList = new List<Task>();
-            foreach (var member in members)
-            {
-                var task = _capability.MemberService.DeleteAsync(member.Id, token);
-                taskList.Add(task);
-            }
-
-            var t = _capability.ApplicantService.DeleteAllAsync(token);
-            taskList.Add(t);
-            await Task.WhenAll(taskList);
+            var t1 = _capability.MemberService.DeleteAllAsync(token);
+            var t2 = _capability.ApplicantService.DeleteAllAsync(token);
+            await Task.WhenAll(t1, t2);
         }
 
         /// <summary>
@@ -64,7 +56,7 @@ namespace Crm.NexusAdapter.Service.Controllers
             var taskList = new List<Task>();
 
             // Add some applicants
-            var task = _capability.ApplicantService.CreateAsync(new Applicant { Name = "Johnny B. Good" }, token);
+            var task = _capability.ApplicantService.CreateAsync(new Applicant { Name = "Johnny B. Goode" }, token);
             taskList.Add(task);
             task = _capability.ApplicantService.CreateAsync(new Applicant { Name = "Bad Cousin" }, token);
             taskList.Add(task);
