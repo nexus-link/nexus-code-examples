@@ -1,7 +1,7 @@
 ﻿using System;
 using Nexus.Link.Libraries.Core.Assert;
 
-namespace Crm.NexusAdapter.Service.OnBoarding.Logic
+namespace Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic
 {
     internal static class TypeExtensions
     {

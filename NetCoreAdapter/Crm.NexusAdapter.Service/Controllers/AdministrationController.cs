@@ -6,7 +6,6 @@ using BusinessApi.Contracts.Capabilities.OnBoarding.Model;
 using Microsoft.AspNetCore.Mvc;
 using Nexus.Link.Libraries.Core.Application;
 using Nexus.Link.Libraries.Core.Assert;
-using Nexus.Link.Libraries.Core.Error.Logic;
 
 namespace Crm.NexusAdapter.Service.Controllers
 {
@@ -37,7 +36,7 @@ namespace Crm.NexusAdapter.Service.Controllers
         [Route("Reset")]
         public async Task ResetAsync(CancellationToken token = new CancellationToken())
         {
-            ServiceContract.Require(!FulcrumApplication.IsInProductionOrProductionSimulation, $"This method can't be called in production.");
+            ServiceContract.Require(!FulcrumApplication.IsInProductionOrProductionSimulation, "This method can\'t be called in production.");
             var t1 = _capability.MemberService.DeleteAllAsync(token);
             var t2 = _capability.ApplicantService.DeleteAllAsync(token);
             await Task.WhenAll(t1, t2);
@@ -52,7 +51,7 @@ namespace Crm.NexusAdapter.Service.Controllers
         [Route("Seed")]
         public async Task SeedAsync(CancellationToken token = new CancellationToken())
         {
-            ServiceContract.Require(!FulcrumApplication.IsInProductionOrProductionSimulation, $"This method can't be called in production.");
+            ServiceContract.Require(!FulcrumApplication.IsInProductionOrProductionSimulation, "This method can\'t be called in production.");
             var taskList = new List<Task>();
 
             // Add some applicants

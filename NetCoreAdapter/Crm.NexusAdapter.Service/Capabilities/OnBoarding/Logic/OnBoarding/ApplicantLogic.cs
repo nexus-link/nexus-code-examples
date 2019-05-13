@@ -8,9 +8,8 @@ using Crm.System.Contract;
 using Crm.System.Contract.Model;
 using Nexus.Link.Libraries.Core.Application;
 using Nexus.Link.Libraries.Core.Assert;
-using NotImplementedException = System.NotImplementedException;
 
-namespace Crm.NexusAdapter.Service.OnBoarding.Logic.OnBoarding
+namespace Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.OnBoarding
 {
     /// <summary>
     /// Implements logic for of <see cref="IApplicantService"/>
@@ -67,7 +66,7 @@ namespace Crm.NexusAdapter.Service.OnBoarding.Logic.OnBoarding
         /// <inheritdoc />
         public async Task DeleteAllAsync(CancellationToken token = new CancellationToken())
         {
-            InternalContract.Require(!FulcrumApplication.IsInProductionOrProductionSimulation, $"This method can't be called in production.");
+            InternalContract.Require(!FulcrumApplication.IsInProductionOrProductionSimulation, "This method can\'t be called in production.");
             await _crmSystem.LeadFunctionality.DeleteAll();
         }
     }

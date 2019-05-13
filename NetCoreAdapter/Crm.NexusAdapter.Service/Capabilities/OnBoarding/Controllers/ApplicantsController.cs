@@ -2,7 +2,7 @@
 using BusinessApi.Controllers.Capabilities.OnBoarding;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Crm.NexusAdapter.Service.OnBoarding.Controllers
+namespace Crm.NexusAdapter.Service.Capabilities.OnBoarding.Controllers
 {
     /// <inheritdoc />
     [Route("api/[controller]")]

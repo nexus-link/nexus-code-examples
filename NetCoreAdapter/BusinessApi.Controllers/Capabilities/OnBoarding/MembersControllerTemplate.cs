@@ -46,7 +46,7 @@ namespace BusinessApi.Controllers.Capabilities.OnBoarding
         [Route("")]
         public async Task DeleteAllAsync(CancellationToken token = new CancellationToken())
         {
-            ServiceContract.Require(!FulcrumApplication.IsInProductionOrProductionSimulation, $"This method can't be called in production.");
+            ServiceContract.Require(!FulcrumApplication.IsInProductionOrProductionSimulation, "This method can\'t be called in production.");
             await Capability.MemberService.DeleteAllAsync(token);
         }
     }
