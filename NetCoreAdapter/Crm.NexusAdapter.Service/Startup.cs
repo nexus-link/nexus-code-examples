@@ -34,7 +34,7 @@ namespace Crm.NexusAdapter.Service
             services.AddSingleton<IIntegrationCapability, NexusApiMock>();
             services.AddSingleton<IAdapterService, AdapterServiceForSystem>();
             services.AddSingleton<ICrmSystem, CrmSystemMock>();
-            services.AddScoped<IOnBoardingCapability, OnBoardingLogic>();
+            services.AddScoped<IOnBoardingCapability, OnBoardingCapability>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "Crm.NexusAdapter", Version = "v1" });

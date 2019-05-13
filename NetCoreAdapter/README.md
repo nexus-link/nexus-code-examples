@@ -92,9 +92,11 @@ Run the application and try to do the following from the swagger web page.
 
 ### Crm.System
 
-## Highlights of challenges
+## A deeper look
 
-The core challenge is that the CRM system (`Crm.System`) is modeled differently and behave differently from what the contract (`BusinessApi.Contracts`) says. The adapter (`Crm.NexusAdapter.Service`) is where we add code to translate between the contract and the actual system. The code for this is located in the `Capabilities.OnBoarding.Logic` part of that project.
+The core challenge is that the CRM system (`Crm.System`) is both modeled differently and behave differently from what the contract (`BusinessApi.Contracts`) says. The adapter (`Crm.NexusAdapter.Service`) is where we add code to translate between the contract and the actual system. The code for this is located in the `Capabilities.OnBoarding.Logic` part of that project.
+
+### 
 
 ### The data model differs
 
