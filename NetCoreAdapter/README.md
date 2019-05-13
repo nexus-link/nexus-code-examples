@@ -88,7 +88,12 @@ Run the application and try to do the following from the swagger web page.
 5. List the current members (expect to get a list of 3 members)
 6. List the current applicants (expect to get an empty list)
 
-## Guided tour of the code
+## A deeper look
+
+Now it is time to have a close look at the code. We will do this by guiding you through a debug session where we follow the flow of the code.
+
+1. Seed the application.
+ 
 
 ### Crm.System
 
@@ -96,7 +101,12 @@ Run the application and try to do the following from the swagger web page.
 
 The core challenge is that the CRM system (`Crm.System`) is both modeled differently and behave differently from what the contract (`BusinessApi.Contracts`) says. The adapter (`Crm.NexusAdapter.Service`) is where we add code to translate between the contract and the actual system. The code for this is located in the `Capabilities.OnBoarding.Logic` part of that project.
 
-### 
+### Capabilities.OnBoarding.Logic.TypeMappingExtensions.cs
+
+This is an internal support class for mapping between the data models. The models doesn't differ too much, so this is mostly mapping of fields.
+
+### ApplicantLogic.cs
+
 
 ### The data model differs
 

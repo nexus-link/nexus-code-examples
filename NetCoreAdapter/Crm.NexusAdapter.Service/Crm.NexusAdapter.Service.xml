@@ -16,58 +16,84 @@
         <member name="M:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Controllers.MembersController.#ctor(BusinessApi.Contracts.Capabilities.OnBoarding.IOnBoardingCapability)">
             <inheritdoc />
         </member>
-        <member name="T:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.OnBoarding.ApplicantLogic">
+        <member name="T:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.ApplicantLogic">
             <summary>
             Implements logic for of <see cref="T:BusinessApi.Contracts.Capabilities.OnBoarding.IApplicantService"/>
             </summary>
         </member>
-        <member name="M:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.OnBoarding.ApplicantLogic.#ctor(Crm.System.Contract.ICrmSystem)">
+        <member name="M:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.ApplicantLogic.#ctor(Crm.System.Contract.ICrmSystem)">
             <summary>
             Constructor
             </summary>
         </member>
-        <member name="M:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.OnBoarding.ApplicantLogic.CreateAsync(BusinessApi.Contracts.Capabilities.OnBoarding.Model.Applicant,System.Threading.CancellationToken)">
+        <member name="M:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.ApplicantLogic.CreateAsync(BusinessApi.Contracts.Capabilities.OnBoarding.Model.Applicant,System.Threading.CancellationToken)">
             <inheritdoc />
         </member>
-        <member name="M:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.OnBoarding.ApplicantLogic.ReadAllAsync(System.Int32,System.Threading.CancellationToken)">
+        <member name="M:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.ApplicantLogic.ReadAllAsync(System.Int32,System.Threading.CancellationToken)">
             <inheritdoc />
         </member>
-        <member name="M:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.OnBoarding.ApplicantLogic.ApproveAsync(System.String,System.Threading.CancellationToken)">
+        <member name="M:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.ApplicantLogic.ApproveAsync(System.String,System.Threading.CancellationToken)">
             <inheritdoc />
         </member>
-        <member name="M:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.OnBoarding.ApplicantLogic.RejectAsync(System.String,System.Threading.CancellationToken)">
+        <member name="M:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.ApplicantLogic.RejectAsync(System.String,System.Threading.CancellationToken)">
             <inheritdoc />
         </member>
-        <member name="M:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.OnBoarding.ApplicantLogic.WithdrawAsync(System.String,System.Threading.CancellationToken)">
+        <member name="M:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.ApplicantLogic.WithdrawAsync(System.String,System.Threading.CancellationToken)">
             <inheritdoc />
         </member>
-        <member name="M:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.OnBoarding.ApplicantLogic.DeleteAllAsync(System.Threading.CancellationToken)">
+        <member name="M:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.ApplicantLogic.DeleteAllAsync(System.Threading.CancellationToken)">
             <inheritdoc />
         </member>
-        <member name="T:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.OnBoarding.MemberLogic">
+        <member name="T:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.MemberLogic">
             <summary>
             Implements logic for of <see cref="T:BusinessApi.Contracts.Capabilities.OnBoarding.IMemberService"/>
             </summary>
         </member>
-        <member name="M:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.OnBoarding.MemberLogic.#ctor(Crm.System.Contract.ICrmSystem)">
+        <member name="M:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.MemberLogic.#ctor(Crm.System.Contract.ICrmSystem)">
             <summary>
             Constructor
             </summary>
         </member>
-        <member name="M:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.OnBoarding.MemberLogic.ReadAllAsync(System.Int32,System.Threading.CancellationToken)">
+        <member name="M:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.MemberLogic.ReadAllAsync(System.Int32,System.Threading.CancellationToken)">
             <inheritdoc />
         </member>
-        <member name="M:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.OnBoarding.MemberLogic.DeleteAsync(System.String,System.Threading.CancellationToken)">
+        <member name="M:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.MemberLogic.DeleteAsync(System.String,System.Threading.CancellationToken)">
             <inheritdoc />
         </member>
-        <member name="M:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.OnBoarding.MemberLogic.DeleteAllAsync(System.Threading.CancellationToken)">
+        <member name="M:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.MemberLogic.DeleteAllAsync(System.Threading.CancellationToken)">
             <inheritdoc />
         </member>
-        <member name="P:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.OnBoarding.OnBoardingLogic.ApplicantService">
+        <member name="T:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.OnBoardingCapability">
             <inheritdoc />
         </member>
-        <member name="P:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.OnBoarding.OnBoardingLogic.MemberService">
+        <member name="M:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.OnBoardingCapability.#ctor(Crm.System.Contract.ICrmSystem)">
             <inheritdoc />
+        </member>
+        <member name="P:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.OnBoardingCapability.ApplicantService">
+            <inheritdoc />
+        </member>
+        <member name="P:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.OnBoardingCapability.MemberService">
+            <inheritdoc />
+        </member>
+        <member name="T:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.TypeMappingExtensions">
+            <summary>
+            Mapping extensions
+            </summary>
+        </member>
+        <member name="M:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.TypeMappingExtensions.From(BusinessApi.Contracts.Capabilities.OnBoarding.Model.Applicant,Crm.System.Contract.Model.Lead)">
+            <summary>
+            Map from <see cref="T:Crm.System.Contract.Model.Lead"/> to <see cref="T:BusinessApi.Contracts.Capabilities.OnBoarding.Model.Applicant"/>.
+            </summary>
+        </member>
+        <member name="M:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.TypeMappingExtensions.From(BusinessApi.Contracts.Capabilities.OnBoarding.Model.Member,Crm.System.Contract.Model.Contact)">
+            <summary>
+            Map from <see cref="T:Crm.System.Contract.Model.Contact"/> to <see cref="T:Crm.System.Contract.Model.Lead"/>.
+            </summary>
+        </member>
+        <member name="M:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.TypeMappingExtensions.From(Crm.System.Contract.Model.Lead,BusinessApi.Contracts.Capabilities.OnBoarding.Model.Applicant)">
+            <summary>
+            Map from <see cref="T:BusinessApi.Contracts.Capabilities.OnBoarding.Model.Applicant"/> to <see cref="T:Crm.System.Contract.Model.Lead"/>.
+            </summary>
         </member>
         <member name="T:Crm.NexusAdapter.Service.Controllers.AdministrationController">
             <summary>

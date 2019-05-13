@@ -5,7 +5,7 @@ using Nexus.Link.Libraries.Core.Error.Logic;
 
 namespace Crm.NexusAdapter.Service.Logic
 {
-    internal static class TypeExtensions
+    internal static class CommonTypeMappingExtensions
     {
         public static string ToIdString(this Guid source)
         {
@@ -31,15 +31,15 @@ namespace Crm.NexusAdapter.Service.Logic
                     switch (e.Code)
                     {
                         case 1:
-                            return new FulcrumBusinessRuleException("The applicant has already been qualified", exception);
+                            return new FulcrumBusinessRuleException("The applicant has already been qualified", e);
                         case 2:
-                            return new FulcrumBusinessRuleException("The application has already been withdrawn or rejected.", exception);
+                            return new FulcrumBusinessRuleException("The application has already been withdrawn or rejected.", e);
                         default:
                             return new FulcrumBusinessRuleException($"Failed CRM business rule: {e.Message}", e);
                     }
                     
                 case ProgrammersErrorException e:
-                    return new FulcrumResourceException($"The CRM system had an internal error: {exception.Message}", exception);
+                    return new FulcrumResourceException($"The CRM system had an internal error: {e.Message}", e);
                 default:
                     return new FulcrumAssertionFailedException($"Could not convert an exception of type {exception.GetType().FullName} to a Nexus exception.");
             }
