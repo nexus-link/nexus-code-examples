@@ -16,9 +16,6 @@
         <member name="M:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Controllers.MembersController.#ctor(BusinessApi.Contracts.Capabilities.OnBoarding.IOnBoardingCapability)">
             <inheritdoc />
         </member>
-        <member name="M:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.AdapterServiceForSystem.LeadWasQualified(System.Guid,System.Guid,System.DateTimeOffset)">
-            <inheritdoc />
-        </member>
         <member name="T:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.OnBoarding.ApplicantLogic">
             <summary>
             Implements logic for of <see cref="T:BusinessApi.Contracts.Capabilities.OnBoarding.IApplicantService"/>
@@ -96,6 +93,15 @@
             </summary>
             <param name="token"></param>
             <returns></returns>
+        </member>
+        <member name="T:Crm.NexusAdapter.Service.Logic.AdapterServiceForSystem">
+            <inheritdoc />
+        </member>
+        <member name="M:Crm.NexusAdapter.Service.Logic.AdapterServiceForSystem.#ctor(BusinessApi.Contracts.Capabilities.Integration.IIntegrationCapability)">
+            <inheritdoc />
+        </member>
+        <member name="M:Crm.NexusAdapter.Service.Logic.AdapterServiceForSystem.LeadWasQualified(System.Guid,System.Guid,System.DateTimeOffset)">
+            <inheritdoc />
         </member>
     </members>
 </doc>

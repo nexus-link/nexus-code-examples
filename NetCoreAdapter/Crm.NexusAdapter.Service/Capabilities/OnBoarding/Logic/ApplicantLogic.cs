@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -6,9 +7,11 @@ using BusinessApi.Contracts.Capabilities.OnBoarding;
 using BusinessApi.Contracts.Capabilities.OnBoarding.Model;
 using Crm.NexusAdapter.Service.Logic;
 using Crm.System.Contract;
+using Crm.System.Contract.Exceptions;
 using Crm.System.Contract.Model;
 using Nexus.Link.Libraries.Core.Application;
 using Nexus.Link.Libraries.Core.Assert;
+using Nexus.Link.Libraries.Core.Error.Logic;
 
 namespace Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.OnBoarding
 {
@@ -48,20 +51,53 @@ namespace Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.OnBoarding
         /// <inheritdoc />
         public async Task<string> ApproveAsync(string id, CancellationToken token = default(CancellationToken))
         {
-            var memberId = await _crmSystem.LeadFunctionality.QualifyAsync(id.ToGuid());
-            return memberId.ToIdString();
+            try
+            {
+                var memberId = await _crmSystem.LeadFunctionality.QualifyAsync(id.ToGuid());
+                return memberId.ToIdString();
+            }
+            catch (NotFoundException)
+            {
+                throw new FulcrumNotFoundException($"The application with id {id} could not be found.");
+            }
+            catch (Exception e)
+            {
+                throw e.ToNexusException();
+            }
         }
 
         /// <inheritdoc />
         public async Task RejectAsync(string id, CancellationToken token = default(CancellationToken))
         {
-            await _crmSystem.LeadFunctionality.RejectAsync(id.ToGuid(), "Application rejected.");
+            try
+            {
+                await _crmSystem.LeadFunctionality.RejectAsync(id.ToGuid(), "Application rejected.");
+            }
+            catch (NotFoundException)
+            {
+                throw new FulcrumNotFoundException($"The application with id {id} could not be found.");
+            }
+            catch (Exception e)
+            {
+                throw e.ToNexusException();
+            }
         }
 
         /// <inheritdoc />
         public async Task WithdrawAsync(string id, CancellationToken token = default(CancellationToken))
         {
-            await _crmSystem.LeadFunctionality.RejectAsync(id.ToGuid(), "Application withdrawn.");
+            try
+            {
+                await _crmSystem.LeadFunctionality.RejectAsync(id.ToGuid(), "Application withdrawn.");
+            }
+            catch (NotFoundException)
+            {
+                throw new FulcrumNotFoundException($"The application with id {id} could not be found.");
+            }
+            catch (Exception e)
+            {
+                throw e.ToNexusException();
+            }
         }
 
         /// <inheritdoc />

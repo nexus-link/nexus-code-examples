@@ -28,12 +28,11 @@ The integration capability provides services for publishing events, etc. The on-
 ### Challenges
 
 The CRM system is a standard system that has another entity model and a business logic that doesn't fit one-to-one with how the business logic think of the on-boarding process:
-- Applicant is called *Lead*
-- Member is called *Contact*
+- Applicant is called *Lead* and Member is called *Contact*
 - A Lead can be "qualified" or rejected, never withdrawn.
 - A Lead is a complex object to handle situations that our organization does not need
 - The list of Applicants is not the same as the list of Leads, because a Lead is not deleted after it has been qualified or rejected, it only changes its state.
-- The CRM system has proprietary error codes that doesn't make any sense in the digital platform
+- The CRM system has proprietary error messages that doesn't make any sense in the digital platform
 
 ## Solution overview
 
@@ -77,7 +76,7 @@ If the adapter wants to access functionality from another capability, it has to 
 
 ## Try it
 
-Run the application and try to do the following from the swagger web page..
+Run the application and try to do the following from the swagger web page.
 
 1. Seed the application with initial data. (`POST /api/Administration/Seed`)
 2. List the current members (`GET /api/Members`, expect to get a list of 2 members)
@@ -88,3 +87,15 @@ Run the application and try to do the following from the swagger web page..
 	3. Withdraw "Willy Nilly" (`POST /api/Applicants/{id}/Withdraw`)
 5. List the current members (expect to get a list of 3 members)
 6. List the current applicants (expect to get an empty list)
+
+## Guided tour of the code
+
+### Crm.System
+
+## Highlights of challenges
+
+### The data model differs
+
+The data model for the OnBoarding capability in project `BusinessApi.Contracts` is different from the data model in project `Crm.System`. Mapping between these models is the main task of the adapter. That is done in the `Capabilities.OnBoarding.Logic` part of the code. 
+
+

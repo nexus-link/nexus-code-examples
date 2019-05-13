@@ -47,7 +47,6 @@ namespace Crm.System.Sdk
         public async Task<Guid> QualifyAsync(Guid id)
         {
             var lead = await ReadAsync(id);
-            // TODO: Must not use Fulcrum stuff in the CRM system
             if (lead == null) throw new NotFoundException("Lead not found");
             switch (lead.Status)
             {
@@ -64,9 +63,9 @@ namespace Crm.System.Sdk
                     await _adapterService.LeadWasQualified(lead.Id, contactId, lead.UpdatedAt);
                     return contactId;
                 case Lead.StatusEnum.Qualified:
-                    throw new BusinessRuleException("The lead was already qualified.");
+                    throw new BusinessRuleException(1, "The lead has already been qualified.");
                 case Lead.StatusEnum.Rejected:
-                    throw new BusinessRuleException("The lead has previously been rejected.");
+                    throw new BusinessRuleException(2, "The lead has already been rejected.");
                 default:
                     throw new ProgrammersErrorException($"Unknown lead status: {lead.Status}");
             }
@@ -76,7 +75,6 @@ namespace Crm.System.Sdk
         public async Task RejectAsync(Guid id, string reason)
         {
             var lead = await ReadAsync(id);
-            // TODO: Must not use Fulcrum stuff in the CRM system
             if (lead == null) throw new NotFoundException("Lead not found");
             switch (lead.Status)
             {
@@ -86,7 +84,7 @@ namespace Crm.System.Sdk
                     lead.UpdatedAt = DateTimeOffset.Now;
                     return;
                 case Lead.StatusEnum.Qualified:
-                    throw new BusinessRuleException("The lead has already been qualified and can't be rejected.");
+                    throw new BusinessRuleException(1, "The lead has already been qualified.");
                 case Lead.StatusEnum.Rejected:
                     // Idempotent - already rejected
                     return;
