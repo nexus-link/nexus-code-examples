@@ -4,12 +4,14 @@ using BusinessApi.Contracts.Capabilities.Integration;
 using BusinessApi.Contracts.Events;
 using Crm.NexusAdapter.Contract;
 
-namespace Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic
+namespace Crm.NexusAdapter.Service.Logic
 {
+    /// <inheritdoc />
     public class AdapterServiceForSystem : IAdapterService
     {
         private readonly IIntegrationCapability _integrationCapability;
 
+        /// <inheritdoc />
         public AdapterServiceForSystem(IIntegrationCapability integrationCapability)
         {
             _integrationCapability = integrationCapability;

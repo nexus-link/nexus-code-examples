@@ -6,6 +6,7 @@ using BusinessApi.Sdk;
 using Crm.NexusAdapter.Contract;
 using Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic;
 using Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.OnBoarding;
+using Crm.NexusAdapter.Service.Logic;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;

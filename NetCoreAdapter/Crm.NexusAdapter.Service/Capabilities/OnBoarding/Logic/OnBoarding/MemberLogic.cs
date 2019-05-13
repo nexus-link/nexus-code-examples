@@ -4,6 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using BusinessApi.Contracts.Capabilities.OnBoarding;
 using BusinessApi.Contracts.Capabilities.OnBoarding.Model;
+using Crm.NexusAdapter.Service.Logic;
 using Crm.System.Contract;
 using Nexus.Link.Libraries.Core.Application;
 using Nexus.Link.Libraries.Core.Assert;
