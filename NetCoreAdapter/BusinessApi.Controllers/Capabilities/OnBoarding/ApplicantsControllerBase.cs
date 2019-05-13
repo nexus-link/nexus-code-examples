@@ -12,7 +12,7 @@ namespace BusinessApi.Controllers.Capabilities.OnBoarding
     /// <summary>
     /// Service implementation of <see cref="IApplicantService"/>
     /// </summary>
-    public abstract class ApplicantsControllerTemplate : ControllerBase, IApplicantService
+    public abstract class ApplicantsControllerBase : ControllerBase, IApplicantService
     {
         protected readonly IOnBoardingCapability Capability;
 
@@ -20,7 +20,7 @@ namespace BusinessApi.Controllers.Capabilities.OnBoarding
         /// Constructor
         /// </summary>
         /// <param name="capability">The logic layer</param>
-        protected ApplicantsControllerTemplate(IOnBoardingCapability capability)
+        protected ApplicantsControllerBase(IOnBoardingCapability capability)
         {
             Capability = capability;
         }

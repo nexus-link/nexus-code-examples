@@ -13,7 +13,7 @@ using Nexus.Link.Libraries.Core.Application;
 using Nexus.Link.Libraries.Core.Assert;
 using Nexus.Link.Libraries.Core.Error.Logic;
 
-namespace Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic.OnBoarding
+namespace Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic
 {
     /// <summary>
     /// Implements logic for of <see cref="IApplicantService"/>

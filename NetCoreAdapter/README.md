@@ -94,8 +94,10 @@ Run the application and try to do the following from the swagger web page.
 
 ## Highlights of challenges
 
+The core challenge is that the CRM system (`Crm.System`) is modeled differently and behave differently from what the contract (`BusinessApi.Contracts`) says. The adapter (`Crm.NexusAdapter.Service`) is where we add code to translate between the contract and the actual system. The code for this is located in the `Capabilities.OnBoarding.Logic` part of that project.
+
 ### The data model differs
 
-The data model for the OnBoarding capability in project `BusinessApi.Contracts` is different from the data model in project `Crm.System`. Mapping between these models is the main task of the adapter. That is done in the `Capabilities.OnBoarding.Logic` part of the code. 
+The data model for the OnBoarding capability in project `BusinessApi.Contracts` is different from the data model in project `Crm.System`. Mapping between these models is the main task of the adapter.  
 
 

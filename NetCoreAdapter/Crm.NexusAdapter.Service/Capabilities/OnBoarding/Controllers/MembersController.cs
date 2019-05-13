@@ -7,7 +7,7 @@ namespace Crm.NexusAdapter.Service.Capabilities.OnBoarding.Controllers
     /// <inheritdoc />
     [Route("api/[controller]")]
     [ApiController]
-    public class MembersController : MembersControllerTemplate
+    public class MembersController : MembersControllerBase
     {
         /// <inheritdoc />
         public MembersController(IOnBoardingCapability capability)
