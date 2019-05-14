@@ -90,7 +90,7 @@ If the adapter wants to access functionality from another capability, it has to 
 
 Now it is time to have a close look at the code. We will do this by guiding you through some use cases where we follow the flow of the code.
 
-Prepare by setting a debug breaking point in every method in the controller base classes in `BusinessApi.Controllers.Capabilities.OnBoarding`. Start the adapter in debug mode.
+Prepare by setting a debug breaking point in every method in `BusinessApi.Controllers.Capabilities.OnBoarding.ApplicantsControllerBase`. Start the adapter in debug mode.
 
 ### Create an applicant
 
