@@ -37,5 +37,11 @@ namespace Crm.System.Contract
         /// <param name="reason">The reason behind the rejection</param>
         /// <returns>The internal id of the new customer record.</returns>
         Task RejectAsync(Guid id, string reason);
+
+        /// <summary>
+        /// Delete all leads.
+        /// </summary>
+        /// <remarks>This method really removes all leads. Use with caution!</remarks>
+        Task DeleteAll();
     }
 }

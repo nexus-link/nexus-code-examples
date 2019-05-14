@@ -10,15 +10,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crm.NexusAdapter.Contract", "Crm.NexusAdapter.Contract\Crm.NexusAdapter.Contract.csproj", "{29C029FF-2E5B-4323-9EDB-0BCB1573B30E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Crm.NexusAdapter.Contract", "Crm.NexusAdapter.Contract\Crm.NexusAdapter.Contract.csproj", "{29C029FF-2E5B-4323-9EDB-0BCB1573B30E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crm.System", "Crm.System\Crm.System.csproj", "{7F3EBE9A-B44C-4B48-9070-B405D9B0DEC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Crm.System", "Crm.System\Crm.System.csproj", "{7F3EBE9A-B44C-4B48-9070-B405D9B0DEC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessApi.Contracts", "BusinessApi.Contracts\BusinessApi.Contracts.csproj", "{CE680FC0-D08A-432F-9FEC-40FB869B166C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessApi.Contracts", "BusinessApi.Contracts\BusinessApi.Contracts.csproj", "{CE680FC0-D08A-432F-9FEC-40FB869B166C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessApi.Sdk", "BusinessApi.Sdk\BusinessApi.Sdk.csproj", "{000806D1-7428-4CCE-85B6-E9DA146A7B2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessApi.Sdk", "BusinessApi.Sdk\BusinessApi.Sdk.csproj", "{000806D1-7428-4CCE-85B6-E9DA146A7B2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessApi.Controllers", "BusinessApi.Controllers\BusinessApi.Controllers.csproj", "{462E766F-8C95-4691-8A3B-C45E040C3D46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessApi.Controllers", "BusinessApi.Controllers\BusinessApi.Controllers.csproj", "{462E766F-8C95-4691-8A3B-C45E040C3D46}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Imported NuGets", "Imported NuGets", "{42ED5D05-C8F6-4EEF-AA84-FFAAC6765A18}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External Applications", "External Applications", "{0C906648-B999-429B-B8E8-C2679A5A1D00}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Adapter  Code", "Adapter  Code", "{022C1B74-47DC-4902-BFFD-7D6BA131E4E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +59,14 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{087E527F-E423-4728-80E7-809C18CAB6CA} = {022C1B74-47DC-4902-BFFD-7D6BA131E4E9}
+		{29C029FF-2E5B-4323-9EDB-0BCB1573B30E} = {022C1B74-47DC-4902-BFFD-7D6BA131E4E9}
+		{7F3EBE9A-B44C-4B48-9070-B405D9B0DEC0} = {0C906648-B999-429B-B8E8-C2679A5A1D00}
+		{CE680FC0-D08A-432F-9FEC-40FB869B166C} = {42ED5D05-C8F6-4EEF-AA84-FFAAC6765A18}
+		{000806D1-7428-4CCE-85B6-E9DA146A7B2E} = {42ED5D05-C8F6-4EEF-AA84-FFAAC6765A18}
+		{462E766F-8C95-4691-8A3B-C45E040C3D46} = {42ED5D05-C8F6-4EEF-AA84-FFAAC6765A18}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8484EFF1-A00F-4FA3-9B66-3B281028CAFA}

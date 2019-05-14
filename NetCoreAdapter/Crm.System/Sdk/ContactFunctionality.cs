@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Crm.System.Contract;
 using Crm.System.Contract.Model;
 
-namespace Crm.System.Logic
+namespace Crm.System.Sdk
 {
     public class ContactFunctionality : IContactFunctionality
     {
@@ -25,5 +26,20 @@ namespace Crm.System.Logic
             Items.Add(item);
             return Task.FromResult(item.Id);
         }
-     }
+
+        /// <inheritdoc />
+        public Task Delete(Guid id)
+        {
+            var item = Items.FirstOrDefault(i => i.Id == id);
+            if (item != null) Items.Remove(item);
+            return Task.CompletedTask;
+        }
+
+        /// <inheritdoc />
+        public Task DeleteAll()
+        {
+            Items.Clear();
+            return Task.CompletedTask;
+        }
+    }
 }

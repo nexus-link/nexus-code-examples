@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using BusinessApi.Contracts.Capabilities.OnBoarding;
 using BusinessApi.Contracts.Capabilities.OnBoarding.Model;
 using Microsoft.AspNetCore.Mvc;
+using Nexus.Link.Libraries.Core.Application;
 using Nexus.Link.Libraries.Core.Assert;
 
 namespace BusinessApi.Controllers.Capabilities.OnBoarding
@@ -11,7 +13,7 @@ namespace BusinessApi.Controllers.Capabilities.OnBoarding
     /// <summary>
     /// Service implementation of <see cref="IApplicantService"/>
     /// </summary>
-    public abstract class ApplicantsControllerTemplate : ControllerBase, IApplicantService
+    public abstract class ApplicantsControllerBase : ControllerBase, IApplicantService
     {
         protected readonly IOnBoardingCapability Capability;
 
@@ -19,7 +21,7 @@ namespace BusinessApi.Controllers.Capabilities.OnBoarding
         /// Constructor
         /// </summary>
         /// <param name="capability">The logic layer</param>
-        protected ApplicantsControllerTemplate(IOnBoardingCapability capability)
+        protected ApplicantsControllerBase(IOnBoardingCapability capability)
         {
             Capability = capability;
         }
@@ -29,6 +31,8 @@ namespace BusinessApi.Controllers.Capabilities.OnBoarding
         [Route("")]
         public async Task<string> CreateAsync(Applicant item, CancellationToken token = new CancellationToken())
         {
+            ServiceContract.RequireNotNull(item, nameof(item));
+            ServiceContract.RequireValidated(item, nameof(item));
             ServiceContract.Require(item.Id == null, $"The {nameof(item.Id)} field must be null.");
             return await Capability.ApplicantService.CreateAsync(item, token);
         }
@@ -36,8 +40,9 @@ namespace BusinessApi.Controllers.Capabilities.OnBoarding
         /// <inheritdoc />
         [HttpGet]
         [Route("")]
-        public async Task<IEnumerable<Applicant>> ReadAllAsync(int limit, CancellationToken token = new CancellationToken())
+        public async Task<IEnumerable<Applicant>> ReadAllAsync(int limit = Int32.MaxValue, CancellationToken token = new CancellationToken())
         {
+            ServiceContract.RequireGreaterThan(0, limit, nameof(limit));
             return await Capability.ApplicantService.ReadAllAsync(limit, token);
         }
 
@@ -66,6 +71,15 @@ namespace BusinessApi.Controllers.Capabilities.OnBoarding
         {
             ServiceContract.RequireNotNullOrWhiteSpace(id, nameof(id));
             await Capability.ApplicantService.WithdrawAsync(id, token);
+        }
+
+        /// <inheritdoc />
+        [HttpDelete]
+        [Route("")]
+        public async Task DeleteAllAsync(CancellationToken token = new CancellationToken())
+        {
+            ServiceContract.Require(!FulcrumApplication.IsInProductionOrProductionSimulation, "This method can\'t be called in production.");
+            await Capability.ApplicantService.DeleteAllAsync(token);
         }
     }
 }

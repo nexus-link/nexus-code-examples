@@ -1,11 +1,13 @@
 ﻿using BusinessApi.Contracts.Capabilities.OnBoarding;
 using Crm.System.Contract;
 
-namespace Crm.NexusAdapter.Service.Logic.OnBoarding
+namespace Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic
 {
-    public class OnBoardingLogic : IOnBoardingCapability
+    /// <inheritdoc />
+    public class OnBoardingCapability : IOnBoardingCapability
     {
-        public OnBoardingLogic(ICrmSystem system)
+        /// <inheritdoc />
+        public OnBoardingCapability(ICrmSystem system)
         {
             ApplicantService = new ApplicantLogic(system);
             MemberService = new MemberLogic(system);

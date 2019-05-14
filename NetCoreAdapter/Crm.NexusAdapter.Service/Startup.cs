@@ -4,8 +4,8 @@ using BusinessApi.Contracts.Capabilities.Integration;
 using BusinessApi.Contracts.Capabilities.OnBoarding;
 using BusinessApi.Sdk;
 using Crm.NexusAdapter.Contract;
+using Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic;
 using Crm.NexusAdapter.Service.Logic;
-using Crm.NexusAdapter.Service.Logic.OnBoarding;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -14,7 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Nexus.Link.Libraries.Web.AspNet.Pipe.Inbound;
 using Swashbuckle.AspNetCore.Swagger;
 using Crm.System.Contract;
-using Crm.System.Logic;
+using Crm.System.Sdk;
 
 namespace Crm.NexusAdapter.Service
 {
@@ -34,7 +34,7 @@ namespace Crm.NexusAdapter.Service
             services.AddSingleton<IIntegrationCapability, NexusApiMock>();
             services.AddSingleton<IAdapterService, AdapterServiceForSystem>();
             services.AddSingleton<ICrmSystem, CrmSystemMock>();
-            services.AddScoped<IOnBoardingCapability, OnBoardingLogic>();
+            services.AddScoped<IOnBoardingCapability, OnBoardingCapability>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "Crm.NexusAdapter", Version = "v1" });
