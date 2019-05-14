@@ -30,6 +30,8 @@ namespace BusinessApi.Controllers.Capabilities.OnBoarding
         [Route("")]
         public async Task<string> CreateAsync(Applicant item, CancellationToken token = new CancellationToken())
         {
+            ServiceContract.RequireNotNull(item, nameof(item));
+            ServiceContract.RequireValidated(item, nameof(item));
             ServiceContract.Require(item.Id == null, $"The {nameof(item.Id)} field must be null.");
             return await Capability.ApplicantService.CreateAsync(item, token);
         }

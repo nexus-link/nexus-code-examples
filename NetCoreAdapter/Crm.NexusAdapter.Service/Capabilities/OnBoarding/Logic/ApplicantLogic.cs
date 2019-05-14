@@ -33,6 +33,8 @@ namespace Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic
         /// <inheritdoc />
         public async Task<string> CreateAsync(Applicant item, CancellationToken token = new CancellationToken())
         {
+            InternalContract.RequireNotNull(item, nameof(item));
+            InternalContract.RequireValidated(item, nameof(item));
             var lead = new Lead().From(item);
             var id = await _crmSystem.LeadFunctionality.CreateAsync(lead);
             return id.ToIdString();

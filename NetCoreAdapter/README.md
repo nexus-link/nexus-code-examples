@@ -90,9 +90,26 @@ Run the application and try to do the following from the swagger web page.
 
 ## A deeper look
 
-Now it is time to have a close look at the code. We will do this by guiding you through a debug session where we follow the flow of the code.
+Now it is time to have a close look at the code. We will do this by guiding you through some use cases where we follow the flow of the code.
 
-1. Seed the application.
+Prepare by setting a debug breaking point in every method in the controller base classes in `BusinessApi.Controllers.Capabilities.OnBoarding`. Start the adapter in debug mode.
+
+### Create an applicant
+
+1. Reset the database (`POST /api/Administration/Reset`)
+2. Create an applicant (`POST /api/Applicants`) with name "John Doe". You should end up in the debugger in the method `ApplicantsControllerBase.CreateAsync`. This is in the service layer that was provided by the Nexus integration team. The service layer provides the REST interface, verifies the parameters and calls the logic layer where the real job is done.
+	1. The `ServiceContract` statements are guards that verifies the input parameters. A problem with an in parameter results in a response with status code 400. (Try for instance to send in a non-null `id`). Please note that if a class implements `IValidatable`, then there is a special guard method to validate on object of that class.
+	2. Notice that the service layer has access to the entire on-boarding capability as one object. This makes the dependency injection part so much easier.
+	3. Step into the call to the logic layer. This is the main code for the adapter.
+		1. The `InternalContract` statement is a guard that protects the code from unexpected in parameters. In this case its make no sense to create an applicant with no data. This protects us from missing guards in the service layer. If an internal contract guard fails it will result in a response with status code 500, as we consider this as an internal server error.
+		2. The in parameters are converted to the data model for the CRM system.
+		3. We create a *Lead* in the CRM system.
+		4. The result is converted to the capability contract data model (in this case from a Guid to a string).
+
+### Read all applicants
+
+1. Seed the application with initial data.
+
  
 
 ### Crm.System
