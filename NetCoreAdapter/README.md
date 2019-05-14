@@ -96,6 +96,12 @@ Prepare by setting a debug breaking point in every method in the controller base
 
 ### Create an applicant
 
+This use case serves as introduction to
+- Service layer and logic layer
+- Guards (`ServiceContract` and `InternalContract`
+- The interface `IValidatable`
+- The basic structure for a method in the logic layer
+
 1. Reset the database (`POST /api/Administration/Reset`)
 2. Create an applicant (`POST /api/Applicants`) with name "John Doe". You should end up in the debugger in the method `ApplicantsControllerBase.CreateAsync`. This is in the service layer that was provided by the Nexus integration team. The service layer provides the REST interface, verifies the parameters and calls the logic layer where the real job is done.
 	1. The `ServiceContract` statements are guards that verifies the input parameters. A problem with an in parameter results in a response with status code 400. (Try for instance to send in a non-null `id`). Please note that if a class implements `IValidatable`, then there is a special guard method to validate on object of that class.
@@ -103,30 +109,39 @@ Prepare by setting a debug breaking point in every method in the controller base
 	3. Step into the call to the logic layer. This is the main code for the adapter.
 		1. The `InternalContract` statement is a guard that protects the code from unexpected in parameters. In this case its make no sense to create an applicant with no data. This protects us from missing guards in the service layer. If an internal contract guard fails it will result in a response with status code 500, as we consider this as an internal server error.
 		2. The in parameters are converted to the data model for the CRM system.
-		3. We create a *Lead* in the CRM system.
+		3. We create a lead in the CRM system and get the id for that new lead in return.
 		4. The result is converted to the capability contract data model (in this case from a Guid to a string).
+3. Done
 
-### Read all applicants
+### Withdraw an applicant
 
-1. Seed the application with initial data.
+This use case shows:
+- How to customize the functionality of the back-end system.
+- How a proprietary error can be converted to a business API contract error.
 
- 
+1. Reset the database and seed with initial data.
+2. List the current applicants without debugging the code. Copy the id for "Willy Nilly".
+3. Withdraw "Willy Nilly" (`POST /api/Applicants/{id}/Withdraw`). You should end up in the method `ApplicantsControllerBase.WithdrawAsync`. Step into the the call to the logic layer.
+	1. There are no parameters that need to be converted.
+	2. The CRM system has no concept of "withdraw", so we will use its `RejectAsync` method to withdraw the application. So in practice, the lead will be marked as rejected with the comment "Application withdrawn".
+	3. There is no result that needs to be converted.
+4. Now try to accept "Willy Nilly", i.e. use the same id that was withdrawn.
+	1. Step over the `RejectAsync` method. The method will throw an exception.
+	2. The exception is proprietary to the CRM system, so we will convert it to a Nexus exception.
+5. Note (in the swagger UI) that you will get status code 400 and a structured error description in JSON format. The conversion from a Nexus exception into an HTTP response was made in the middleware that is provided by a Nexus NuGet package. The adapter has activated it in the `Configure` method of `Startup.cs`. 
+	
+### Read applicants
 
-### Crm.System
+This use case shows how to customize the visible behavior of the back-end system. The back-end system saves all historic applicants, but we only want to deal with the active applicants.
 
-## A deeper look
-
-The core challenge is that the CRM system (`Crm.System`) is both modeled differently and behave differently from what the contract (`BusinessApi.Contracts`) says. The adapter (`Crm.NexusAdapter.Service`) is where we add code to translate between the contract and the actual system. The code for this is located in the `Capabilities.OnBoarding.Logic` part of that project.
-
-### Capabilities.OnBoarding.Logic.TypeMappingExtensions.cs
-
-This is an internal support class for mapping between the data models. The models doesn't differ too much, so this is mostly mapping of fields.
-
-### ApplicantLogic.cs
-
-
-### The data model differs
-
-The data model for the OnBoarding capability in project `BusinessApi.Contracts` is different from the data model in project `Crm.System`. Mapping between these models is the main task of the adapter.  
+1. Reset the database and seed with initial data.
+2. List the current applicants without debugging the code. Copy the id for "Willy Nilly".
+3. Withdraw the applicant "Willy Nilly" without debugging the code.
+4. Call `GET /api/Applicants`. You should end up in the method `ApplicantsControllerBase.ReadAllsync`. Step into the the call to the logic layer.
+	1. There are no parameters that needs conversion.
+	2. We get a list of all leads from the CRM system. Note that we get three leads where one has type `Rejected` and the other two has type `Active`.
+	3. We select the leads that has type `Active` and converts them to the capability contract model.
+5. Note that there are only two items in the list that is displayed in the swagger UI.
+6. Done
 
 

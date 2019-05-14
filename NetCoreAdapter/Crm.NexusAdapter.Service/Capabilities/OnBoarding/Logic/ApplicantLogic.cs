@@ -53,6 +53,7 @@ namespace Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic
         /// <inheritdoc />
         public async Task<string> ApproveAsync(string id, CancellationToken token = default(CancellationToken))
         {
+            InternalContract.RequireNotNullOrWhiteSpace(id, nameof(id));
             try
             {
                 var memberId = await _crmSystem.LeadFunctionality.QualifyAsync(id.ToGuid());
@@ -71,6 +72,7 @@ namespace Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic
         /// <inheritdoc />
         public async Task RejectAsync(string id, CancellationToken token = default(CancellationToken))
         {
+            InternalContract.RequireNotNullOrWhiteSpace(id, nameof(id));
             try
             {
                 await _crmSystem.LeadFunctionality.RejectAsync(id.ToGuid(), "Application rejected.");
@@ -88,6 +90,7 @@ namespace Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic
         /// <inheritdoc />
         public async Task WithdrawAsync(string id, CancellationToken token = default(CancellationToken))
         {
+            InternalContract.RequireNotNullOrWhiteSpace(id, nameof(id));
             try
             {
                 await _crmSystem.LeadFunctionality.RejectAsync(id.ToGuid(), "Application withdrawn.");

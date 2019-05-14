@@ -30,6 +30,7 @@ namespace BusinessApi.Controllers.Capabilities.OnBoarding
         [Route("")]
         public async Task<IEnumerable<Member>> ReadAllAsync(int limit = 2147483647, CancellationToken token = new CancellationToken())
         {
+            ServiceContract.RequireGreaterThan(0, limit, nameof(limit));
             return await Capability.MemberService.ReadAllAsync(limit, token);
         }
 

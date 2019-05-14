@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using BusinessApi.Contracts.Capabilities.OnBoarding;
@@ -39,8 +40,9 @@ namespace BusinessApi.Controllers.Capabilities.OnBoarding
         /// <inheritdoc />
         [HttpGet]
         [Route("")]
-        public async Task<IEnumerable<Applicant>> ReadAllAsync(int limit, CancellationToken token = new CancellationToken())
+        public async Task<IEnumerable<Applicant>> ReadAllAsync(int limit = Int32.MaxValue, CancellationToken token = new CancellationToken())
         {
+            ServiceContract.RequireGreaterThan(0, limit, nameof(limit));
             return await Capability.ApplicantService.ReadAllAsync(limit, token);
         }
 
