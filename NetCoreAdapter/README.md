@@ -7,10 +7,6 @@ This example has the following objectives:
 
 If you are new to Nexus Link, then you might want to keep a browser tab open with the [glossary](https://nexus.link/docs/glossary) until you have become familiar with the Nexus Link vocabulary. 
 
-## TODO to make the example complete
-
-- The adapter must catch the CRM exceptions and convert them into FulcrumExceptions.
-
 ## Scenario
 
 The example is for an organization that is focused on its members and their needs. To become a member you will have to apply first and you will either be approved or rejected. You can also withdraw your application. 
