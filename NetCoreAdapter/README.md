@@ -7,17 +7,33 @@ This example has the following objectives:
 
 If you are new to Nexus Link, then you might want to keep a browser tab open with the [glossary](https://nexus.link/docs/glossary) until you have become familiar with the Nexus Link vocabulary. 
 
+## Try it
+
+The adapter implements the on-boarding capability for member-driven organization, so it provides functionality for applying for membership and for qualifying and rejecting applicants.
+
+Build and run the application in debug mode. Try to do the following from the swagger web page.
+
+1. Seed the application with initial data. (`POST /api/Administration/Seed`)
+2. List the current members (`GET /api/Members`, expect to get a list of 2 members)
+3. List the current applicants (`GET /api/Applicants`, expect to get a list of 3 applicants)
+4. Copy the id for each of the applicants and do the following:
+	1. Approve "Johnny B. Goode" (`POST /api/Applicants/{id}/Approve`)
+	2. Reject "Bad Cousin" (`POST /api/Applicants/{id}/Reject`)
+	3. Withdraw "Willy Nilly" (`POST /api/Applicants/{id}/Withdraw`)
+5. List the current members (expect to get a list of 3 members)
+6. List the current applicants (expect to get an empty list)
+
 ## Scenario
 
 The example is for an organization that is focused on its members and their needs. To become a member you will have to apply first and you will either be approved or rejected. You can also withdraw your application. 
 
 ### Entities
 
-The example deals with two entities; *Applicant- and *Member*. A person that has applied to become a member is called an Applicant. If an application is approved, then the Applicant becomes a Member.
+The example deals with two entities; *Applicant* and *Member*. A person that has applied to become a member is called an Applicant. If an application is approved, then the Applicant becomes a Member.
 
 ### Capabilities
 
-There are two capabilities in this example; the *integration capability- that is provided by the *business API- and the *on-boarding capability- that should be provided by the CRM system.
+There are two capabilities in this example; the *integration capability* that is provided by the *business API* and the *on-boarding capability* that should be provided by the CRM system.
 
 The integration capability provides services for publishing events, etc. The on-boarding capability provides services for dealing with the application process.
 
@@ -60,7 +76,7 @@ These projects represents code that normally would be provided as NuGet packages
 
 #### BusinessApi.Contracts
 
-Contains all contracts for the organization. The contracts are grouped into *capabilities- that are implemented by the different adapters. An adapter will implement a few of them, often only one. In the example we have two capability contracts; `Integration` and `OnBoarding`.
+Contains all contracts for the organization. The contracts are grouped into *capabilities* that are implemented by the different adapters. An adapter will implement a few of them, often only one. In the example we have two capability contracts; `Integration` and `OnBoarding`.
 
 ### BusinessApi.Controllers
 
@@ -68,21 +84,7 @@ Contains the controller templates that makes it really easy to make the adapter 
 
 #### BusinessApi.Sdk
 
-If the adapter wants to access functionality from another capability, it has to go through the *business API*. The SDK make that simple and hides the integration details. In reality this SDK would call the services in the *business API- for you, but here that functionality is mocked.
-
-## Try it
-
-Run the application and try to do the following from the swagger web page.
-
-1. Seed the application with initial data. (`POST /api/Administration/Seed`)
-2. List the current members (`GET /api/Members`, expect to get a list of 2 members)
-3. List the current applicants (`GET /api/Applicants`, expect to get a list of 3 applicants)
-4. Copy the id for each of the applicants and do the following:
-	1. Approve "Johnny B. Goode" (`POST /api/Applicants/{id}/Approve`)
-	2. Reject "Bad Cousin" (`POST /api/Applicants/{id}/Reject`)
-	3. Withdraw "Willy Nilly" (`POST /api/Applicants/{id}/Withdraw`)
-5. List the current members (expect to get a list of 3 members)
-6. List the current applicants (expect to get an empty list)
+If the adapter wants to access functionality from another capability, it has to go through the *business API*. The SDK make that simple and hides the integration details. In reality this SDK would call the services in the *business API* for you, but here that functionality is mocked.
 
 ## A deeper look
 
