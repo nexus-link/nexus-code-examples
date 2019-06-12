@@ -4,6 +4,40 @@
         <name>Crm.NexusAdapter.Service</name>
     </assembly>
     <members>
+        <member name="T:Crm.NexusAdapter.Service.Capabilities.Adapter.Controllers.AdministrationController">
+            <summary>
+            Administrative services.
+            </summary>
+        </member>
+        <member name="M:Crm.NexusAdapter.Service.Capabilities.Adapter.Controllers.AdministrationController.#ctor(BusinessApi.Contracts.Capabilities.OnBoarding.IOnBoardingCapability)">
+            <summary>
+            
+            </summary>
+            <param name="capability"></param>
+        </member>
+        <member name="M:Crm.NexusAdapter.Service.Capabilities.Adapter.Controllers.AdministrationController.ResetAsync(System.Threading.CancellationToken)">
+            <summary>
+            Remove all members and applicants.
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Crm.NexusAdapter.Service.Capabilities.Adapter.Controllers.AdministrationController.SeedAsync(System.Threading.CancellationToken)">
+            <summary>
+            Add some members and applicants.
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Crm.NexusAdapter.Service.Capabilities.Adapter.Logic.AdapterServiceForSystem">
+            <inheritdoc />
+        </member>
+        <member name="M:Crm.NexusAdapter.Service.Capabilities.Adapter.Logic.AdapterServiceForSystem.#ctor(BusinessApi.Contracts.Capabilities.Integration.IIntegrationCapability)">
+            <inheritdoc />
+        </member>
+        <member name="M:Crm.NexusAdapter.Service.Capabilities.Adapter.Logic.AdapterServiceForSystem.LeadWasQualified(System.Guid,System.Guid,System.DateTimeOffset)">
+            <inheritdoc />
+        </member>
         <member name="T:Crm.NexusAdapter.Service.Capabilities.OnBoarding.Controllers.ApplicantsController">
             <inheritdoc />
         </member>
@@ -94,40 +128,6 @@
             <summary>
             Map from <see cref="T:BusinessApi.Contracts.Capabilities.OnBoarding.Model.Applicant"/> to <see cref="T:Crm.System.Contract.Model.Lead"/>.
             </summary>
-        </member>
-        <member name="T:Crm.NexusAdapter.Service.Controllers.AdministrationController">
-            <summary>
-            Administrative services.
-            </summary>
-        </member>
-        <member name="M:Crm.NexusAdapter.Service.Controllers.AdministrationController.#ctor(BusinessApi.Contracts.Capabilities.OnBoarding.IOnBoardingCapability)">
-            <summary>
-            
-            </summary>
-            <param name="capability"></param>
-        </member>
-        <member name="M:Crm.NexusAdapter.Service.Controllers.AdministrationController.ResetAsync(System.Threading.CancellationToken)">
-            <summary>
-            Remove all members and applicants.
-            </summary>
-            <param name="token"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Crm.NexusAdapter.Service.Controllers.AdministrationController.SeedAsync(System.Threading.CancellationToken)">
-            <summary>
-            Add some members and applicants.
-            </summary>
-            <param name="token"></param>
-            <returns></returns>
-        </member>
-        <member name="T:Crm.NexusAdapter.Service.Logic.AdapterServiceForSystem">
-            <inheritdoc />
-        </member>
-        <member name="M:Crm.NexusAdapter.Service.Logic.AdapterServiceForSystem.#ctor(BusinessApi.Contracts.Capabilities.Integration.IIntegrationCapability)">
-            <inheritdoc />
-        </member>
-        <member name="M:Crm.NexusAdapter.Service.Logic.AdapterServiceForSystem.LeadWasQualified(System.Guid,System.Guid,System.DateTimeOffset)">
-            <inheritdoc />
         </member>
     </members>
 </doc>

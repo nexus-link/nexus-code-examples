@@ -30,8 +30,4 @@
     <ProjectReference Include="..\Crm.System\Crm.System.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Capabilities\Adapter\Controllers\" />
-  </ItemGroup>
-
 </Project>

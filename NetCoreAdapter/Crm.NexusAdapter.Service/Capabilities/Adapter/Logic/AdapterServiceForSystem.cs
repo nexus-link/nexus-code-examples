@@ -3,8 +3,9 @@ using System.Threading.Tasks;
 using BusinessApi.Contracts.Capabilities.Integration;
 using BusinessApi.Contracts.Events;
 using Crm.NexusAdapter.Contract;
+using Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic;
 
-namespace Crm.NexusAdapter.Service.Logic
+namespace Crm.NexusAdapter.Service.Capabilities.Adapter.Logic
 {
     /// <inheritdoc />
     public class AdapterServiceForSystem : IAdapterService

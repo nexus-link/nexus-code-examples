@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Nexus.Link.Libraries.Core.Application;
 using Nexus.Link.Libraries.Core.Assert;
 
-namespace Crm.NexusAdapter.Service.Controllers
+namespace Crm.NexusAdapter.Service.Capabilities.Adapter.Controllers
 {
     /// <summary>
     /// Administrative services.

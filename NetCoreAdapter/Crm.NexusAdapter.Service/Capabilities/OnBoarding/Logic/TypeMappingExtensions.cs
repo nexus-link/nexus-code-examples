@@ -1,5 +1,4 @@
 ﻿using BusinessApi.Contracts.Capabilities.OnBoarding.Model;
-using Crm.NexusAdapter.Service.Logic;
 using Crm.System.Contract.Model;
 
 namespace Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic

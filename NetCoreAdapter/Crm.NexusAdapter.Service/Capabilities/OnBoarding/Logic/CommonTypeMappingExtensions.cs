@@ -3,7 +3,7 @@ using Crm.System.Contract.Exceptions;
 using Nexus.Link.Libraries.Core.Assert;
 using Nexus.Link.Libraries.Core.Error.Logic;
 
-namespace Crm.NexusAdapter.Service.Logic
+namespace Crm.NexusAdapter.Service.Capabilities.OnBoarding.Logic
 {
     internal static class CommonTypeMappingExtensions
     {

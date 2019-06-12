@@ -5,7 +5,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using BusinessApi.Contracts.Capabilities.OnBoarding;
 using BusinessApi.Contracts.Capabilities.OnBoarding.Model;
-using Crm.NexusAdapter.Service.Logic;
 using Crm.System.Contract;
 using Crm.System.Contract.Exceptions;
 using Crm.System.Contract.Model;
