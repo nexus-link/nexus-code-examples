@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Nexus.Link.Libraries.Core" Version="3.7.1" />
-    <PackageReference Include="Nexus.Link.Libraries.Crud" Version="1.0.7" />
+    <PackageReference Include="Nexus.Link.Libraries.Core" Version="4.3.0" />
+    <PackageReference Include="Nexus.Link.Libraries.Crud" Version="2.0.2" />
   </ItemGroup>
 
 </Project>
