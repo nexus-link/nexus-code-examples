@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Acme.BusinessApi.Libraries.Sdk</name>
+    </assembly>
+    <members>
+        <member name="T:Acme.BusinessApi.Libraries.Sdk.Capabilities.Integration.IntegrationCapability">
+            <inheritdoc />
+        </member>
+        <member name="M:Acme.BusinessApi.Libraries.Sdk.Capabilities.Integration.IntegrationCapability.#ctor(System.String,Nexus.Link.Libraries.Core.Platform.Authentication.AuthenticationCredentials)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="baseUrl">The URL to the integration capability</param>
+            <param name="basicCredentials">ClientId and ClientSecret.</param>
+        </member>
+        <member name="T:Acme.BusinessApi.Libraries.Sdk.Startup.AdapterStartup">
+            <summary>
+            Helper class for the different steps in the Startup.cs file.
+            </summary>
+        </member>
+        <member name="M:Acme.BusinessApi.Libraries.Sdk.Startup.AdapterStartup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Use this constructor in the Startup constructor.
+            </summary>
+            <param name="configuration">Take this from the Startup constructor.</param>
+        </member>
+        <member name="M:Acme.BusinessApi.Libraries.Sdk.Startup.AdapterStartup.GetSynchronousFastLogger">
+            <inheritdoc />
+        </member>
+        <member name="M:Acme.BusinessApi.Libraries.Sdk.Startup.AdapterStartup.DependencyInjectBusinessApiServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <inheritdoc />
+        </member>
+        <member name="M:Acme.BusinessApi.Libraries.Sdk.Startup.AdapterStartup.ConfigureAppMiddleware(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Acme.BusinessApi.Service</name>
+    </assembly>
+    <members>
+        <member name="T:Acme.BusinessApi.Service.Controllers.Capabilities.Activation.PersonActivationsController">
+            <inheritdoc cref="T:Acme.BusinessApi.Libraries.Controllers.Capabilities.Activation.PersonActivationsControllerBase" />
+        </member>
+        <member name="M:Acme.BusinessApi.Service.Controllers.Capabilities.Activation.PersonActivationsController.#ctor(Acme.BusinessApi.Libraries.Contracts.Capabilities.Activation.IActivationCapability)">
+            <inheritdoc />
+        </member>
+        <member name="T:Acme.BusinessApi.Service.Controllers.Capabilities.Api.RootsController">
+            <inheritdoc cref="T:Acme.BusinessApi.Libraries.Controllers.Capabilities.Api.RootsControllerBase" />
+        </member>
+        <member name="T:Acme.BusinessApi.Service.Controllers.Capabilities.Economy.InvoicesController">
+            <inheritdoc cref="T:Acme.BusinessApi.Libraries.Controllers.Capabilities.Economy.InvoicesControllerBase" />
+        </member>
+        <member name="M:Acme.BusinessApi.Service.Controllers.Capabilities.Economy.InvoicesController.#ctor(Acme.BusinessApi.Libraries.Contracts.Capabilities.Economy.Invoicing.IInvoicingCapability)">
+            <inheritdoc />
+        </member>
+        <member name="T:Acme.BusinessApi.Service.Controllers.Capabilities.Integration.BusinessEventsController">
+            <inheritdoc cref="T:Nexus.Link.Services.Controllers.Capabilities.Integration.BusinessEvents.BusinessEventsControllerBase" />
+        </member>
+        <member name="M:Acme.BusinessApi.Service.Controllers.Capabilities.Integration.BusinessEventsController.#ctor(Nexus.Link.Services.Contracts.Capabilities.Integration.BusinessEvents.IBusinessEventsCapability)">
+            <inheritdoc />
+        </member>
+        <member name="T:Acme.BusinessApi.Service.Controllers.Capabilities.Integration.PublicKeysController">
+            <inheritdoc cref="T:Nexus.Link.Services.Controllers.Capabilities.Integration.Authentication.TokensControllerBase" />
+        </member>
+        <member name="M:Acme.BusinessApi.Service.Controllers.Capabilities.Integration.PublicKeysController.#ctor(Nexus.Link.Services.Contracts.Capabilities.Integration.Authentication.IAuthenticationCapability)">
+            <inheritdoc />
+        </member>
+        <member name="T:Acme.BusinessApi.Service.Controllers.Capabilities.Integration.TokensController">
+            <inheritdoc cref="T:Nexus.Link.Services.Controllers.Capabilities.Integration.Authentication.TokensControllerBase" />
+        </member>
+        <member name="M:Acme.BusinessApi.Service.Controllers.Capabilities.Integration.TokensController.#ctor(Nexus.Link.Services.Contracts.Capabilities.Integration.Authentication.IAuthenticationCapability)">
+            <inheritdoc />
+        </member>
+        <member name="T:Acme.BusinessApi.Service.RestClients.Capabilities.EconomyAdapter.InvoiceRestClient">
+            <inheritdoc cref="T:Acme.BusinessApi.Libraries.Contracts.Capabilities.Economy.Invoicing.IInvoiceService" />
+        </member>
+        <member name="M:Acme.BusinessApi.Service.RestClients.Capabilities.EconomyAdapter.InvoiceRestClient.#ctor(System.String,System.Net.Http.HttpClient,Microsoft.Rest.ServiceClientCredentials)">
+            <inheritdoc />
+        </member>
+        <member name="M:Acme.BusinessApi.Service.RestClients.Capabilities.EconomyAdapter.InvoiceRestClient.ReadAllLateWithPagingAsync(System.Boolean,System.Int32,System.Nullable{System.Int32},System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Acme.BusinessApi.Service.RestClients.Capabilities.EconomyAdapter.InvoicingCapability">
+            <inheritdoc />
+        </member>
+        <member name="M:Acme.BusinessApi.Service.RestClients.Capabilities.EconomyAdapter.InvoicingCapability.#ctor(System.String,System.Net.Http.HttpClient,Microsoft.Rest.ServiceClientCredentials)">
+            <inheritdoc />
+        </member>
+        <member name="P:Acme.BusinessApi.Service.RestClients.Capabilities.EconomyAdapter.InvoicingCapability.InvoiceService">
+            <inheritdoc />
+        </member>
+        <member name="T:Acme.BusinessApi.Service.RestClients.Capabilities.RpaAdapter.ActivationCapability">
+            <inheritdoc />
+        </member>
+        <member name="M:Acme.BusinessApi.Service.RestClients.Capabilities.RpaAdapter.ActivationCapability.#ctor(System.String,System.Net.Http.HttpClient,Microsoft.Rest.ServiceClientCredentials)">
+            <inheritdoc />
+        </member>
+        <member name="P:Acme.BusinessApi.Service.RestClients.Capabilities.RpaAdapter.ActivationCapability.PersonActivationService">
+            <inheritdoc />
+        </member>
+        <member name="T:Acme.BusinessApi.Service.RestClients.Capabilities.RpaAdapter.PersonActivationRestClient">
+            <inheritdoc cref="T:Acme.BusinessApi.Libraries.Contracts.Capabilities.Economy.Invoicing.IInvoiceService" />
+        </member>
+        <member name="M:Acme.BusinessApi.Service.RestClients.Capabilities.RpaAdapter.PersonActivationRestClient.#ctor(System.String,System.Net.Http.HttpClient,Microsoft.Rest.ServiceClientCredentials)">
+            <inheritdoc />
+        </member>
+        <member name="M:Acme.BusinessApi.Service.Startup.GetSynchronousFastLogger">
+            <inheritdoc />
+        </member>
+        <member name="M:Acme.BusinessApi.Service.Startup.DependencyInjectServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

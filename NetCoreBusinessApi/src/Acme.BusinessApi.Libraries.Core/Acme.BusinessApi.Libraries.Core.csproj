@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>Acme.BusinessApi.Libraries.Core</PackageId>
+    <Version>1.1.8</Version>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageTags>acme</PackageTags>
+    <Authors>XLENT Link</Authors>
+    <PackageProjectUrl>https://github.com/acme-nexus/BusinessApi</PackageProjectUrl>
+    <PackageLanguage>en-US</PackageLanguage>
+    <Description>Core functionality needed in the other packages.</Description>
+    <Copyright>Copyright ©2019 Xlent Link AB</Copyright>
+    <IncludeSymbols>true</IncludeSymbols>
+    <PackageReleaseNotes>
+      1.1.8 Bump
+      1.1.0 Added Invoicing capability
+      1.0.0 First contracts
+    </PackageReleaseNotes>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>Acme.BusinessApi.Libraries.Core.xml</DocumentationFile>
+  </PropertyGroup>
+
+</Project>

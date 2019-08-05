@@ -1,0 +1,25 @@
+resources:
+  repositories:
+  - repository: azure-devops-tools
+    type: github
+    endpoint: 'github-nla-acme-nexus'
+    name: 'nexus-link/nexus-azure-devops-tools'
+    ref: 'refs/heads/master'
+
+trigger:
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - 'src/Acme.BusinessApi.Service/*'
+
+jobs:
+- template: 'templates/netcore/v1/jobs/webapp.yml@azure-devops-tools'
+  parameters:
+    testProjectsPath: ''
+    appProjectsPath: '**/src/Acme.BusinessApi.Service/**/*.csproj'
+    buildConfiguration: 'Debug'
+    azureSubscription: 'azure-acme-nexus'
+    webAppName: 'tst-business-api-acme-nexus'
+    appSettings: '-ClientId $(ClientId) -ClientSecret $(ClientSecret) -Stackify.Key $(Stackify.Key)'

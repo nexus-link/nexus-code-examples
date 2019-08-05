@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Acme.BusinessApi.Libraries.Controllers</name>
+    </assembly>
+    <members>
+        <member name="T:Acme.BusinessApi.Libraries.Controllers.Capabilities.Api.RootsControllerBase">
+            <summary>
+            Service implementation of <see cref="T:Nexus.Link.Services.Controllers.Capabilities.Api.IRootService"/>
+            </summary>
+        </member>
+        <member name="T:Acme.BusinessApi.Libraries.Controllers.Capabilities.Economy.InvoicesControllerBase">
+            <summary>
+            Service implementation of <see cref="T:Acme.BusinessApi.Libraries.Contracts.Capabilities.Economy.Invoicing.IInvoiceService"/>
+            </summary>
+        </member>
+        <member name="F:Acme.BusinessApi.Libraries.Controllers.Capabilities.Economy.InvoicesControllerBase.Capability">
+            <summary>
+            The capability for this controller
+            </summary>
+        </member>
+        <member name="F:Acme.BusinessApi.Libraries.Controllers.Capabilities.Economy.InvoicesControllerBase.CrudController">
+            <summary>
+            The CrudController for this controller
+            </summary>
+        </member>
+        <member name="M:Acme.BusinessApi.Libraries.Controllers.Capabilities.Economy.InvoicesControllerBase.#ctor(Acme.BusinessApi.Libraries.Contracts.Capabilities.Economy.Invoicing.IInvoicingCapability)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="capability">The logic layer</param>
+        </member>
+        <member name="M:Acme.BusinessApi.Libraries.Controllers.Capabilities.Economy.InvoicesControllerBase.ReadAllLateWithPagingAsync(System.Boolean,System.Int32,System.Nullable{System.Int32},System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Acme.BusinessApi.Libraries.Controllers.Capabilities.Economy.InvoicesControllerBase.ReadAllWithPagingAsync(System.Int32,System.Nullable{System.Int32},System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Acme.BusinessApi.Libraries.Controllers.Capabilities.Economy.InvoicesControllerBase.ReadAsync(System.String,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Acme.BusinessApi.Libraries.Controllers.Capabilities.Economy.InvoicesControllerBase.CreateWithSpecifiedIdAsync(System.String,Acme.BusinessApi.Libraries.Contracts.Capabilities.Economy.Invoicing.Model.Invoice,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Acme.BusinessApi.Libraries.Controllers.Capabilities.Economy.InvoicesControllerBase.Nexus#Link#Libraries#Crud#Interfaces#ICreateWithSpecifiedId{Acme#BusinessApi#Libraries#Contracts#Capabilities#Economy#Invoicing#Model#Invoice,Acme#BusinessApi#Libraries#Contracts#Capabilities#Economy#Invoicing#Model#Invoice,System#String}#CreateWithSpecifiedIdAndReturnAsync(System.String,Acme.BusinessApi.Libraries.Contracts.Capabilities.Economy.Invoicing.Model.Invoice,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

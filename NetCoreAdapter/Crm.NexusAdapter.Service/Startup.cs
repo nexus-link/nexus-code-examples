@@ -15,6 +15,8 @@ using Nexus.Link.Libraries.Web.AspNet.Pipe.Inbound;
 using Swashbuckle.AspNetCore.Swagger;
 using Crm.System.Contract;
 using Crm.System.Sdk;
+using Nexus.Link.Libraries.Core.Application;
+using Nexus.Link.Libraries.Core.MultiTenant.Model;
 
 namespace Crm.NexusAdapter.Service
 {
@@ -30,6 +32,7 @@ namespace Crm.NexusAdapter.Service
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            Nexus.Link.Libraries.Web.AspNet.Application.FulcrumApplicationHelper.WebBasicSetup("Crm.NexusAdapter", new Tenant("local", "dev"), RunTimeLevelEnum.Development);
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddSingleton<IIntegrationCapability, NexusApiMock>();
             services.AddSingleton<IAdapterService, AdapterServiceForSystem>();

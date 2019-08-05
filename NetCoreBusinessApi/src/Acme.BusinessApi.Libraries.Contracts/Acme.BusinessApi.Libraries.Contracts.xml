@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Acme.BusinessApi.Libraries.Contracts</name>
+    </assembly>
+    <members>
+        <member name="T:Acme.BusinessApi.Libraries.Contracts.Capabilities.Economy.Invoicing.IInvoiceService">
+            <summary>
+            Service for invoices
+            </summary>
+        </member>
+        <member name="M:Acme.BusinessApi.Libraries.Contracts.Capabilities.Economy.Invoicing.IInvoiceService.ReadAllLateWithPagingAsync(System.Boolean,System.Int32,System.Nullable{System.Int32},System.Threading.CancellationToken)">
+            <summary>
+            Read all invoices that have passed their date of 
+            </summary>
+            <param name="descending">True means that the result is sorted with the oldest late invoice first,
+            false with the newest late invoice first.</param>
+            <param name="offset"></param>
+            <param name="limit"></param>
+            <param name="token">Propagates notification that operations should be canceled.</param>
+            <returns>A paged list with the late invoices.</returns>
+        </member>
+        <member name="T:Acme.BusinessApi.Libraries.Contracts.Capabilities.Economy.Invoicing.IInvoicingCapability">
+            <summary>
+            The services
+            </summary>
+        </member>
+        <member name="P:Acme.BusinessApi.Libraries.Contracts.Capabilities.Economy.Invoicing.IInvoicingCapability.InvoiceService">
+            <summary>
+            The service for <see cref="T:Acme.BusinessApi.Libraries.Contracts.Capabilities.Economy.Invoicing.Model.Invoice"/>.
+            </summary>
+        </member>
+        <member name="T:Acme.BusinessApi.Libraries.Contracts.Capabilities.Economy.Invoicing.Model.Invoice">
+            <summary>
+            Data type for the entity Invoice
+            </summary>
+        </member>
+        <member name="P:Acme.BusinessApi.Libraries.Contracts.Capabilities.Economy.Invoicing.Model.Invoice.Id">
+            <inheritdoc />
+        </member>
+        <member name="P:Acme.BusinessApi.Libraries.Contracts.Capabilities.Economy.Invoicing.Model.Invoice.TotalAmount">
+            <summary>
+            The total amount for this invoice
+            </summary>
+        </member>
+        <member name="P:Acme.BusinessApi.Libraries.Contracts.Capabilities.Economy.Invoicing.Model.Invoice.IssuedAtUtcTime">
+            <summary>
+            When the invoice was created, i.e. the time when it can be accounted for.
+            </summary>
+        </member>
+        <member name="P:Acme.BusinessApi.Libraries.Contracts.Capabilities.Economy.Invoicing.Model.Invoice.ExpiresAtUtcTime">
+            <summary>
+            When the invoice expires, i.e. the latest time that it has to be paid
+            </summary>
+        </member>
+        <member name="P:Acme.BusinessApi.Libraries.Contracts.Capabilities.Economy.Invoicing.Model.Invoice.PaidAtUtcTime">
+            <summary>
+            The actual time when the invoice was paid, or at least when our organization noted it as paid
+            </summary>
+        </member>
+        <member name="T:Acme.BusinessApi.Libraries.Contracts.Events.InvoiceBecameOverdueEvent">
+            <summary>
+            This event is published whenever an Invoices is overdue.
+            </summary>
+        </member>
+        <member name="P:Acme.BusinessApi.Libraries.Contracts.Events.InvoiceBecameOverdueEvent.Metadata">
+            <inheritdoc />
+        </member>
+        <member name="P:Acme.BusinessApi.Libraries.Contracts.Events.InvoiceBecameOverdueEvent.InvoiceId">
+            <summary>
+            The id of the invoice
+            </summary>
+        </member>
+        <member name="P:Acme.BusinessApi.Libraries.Contracts.Events.InvoiceBecameOverdueEvent.TotalAmount">
+            <summary>
+            The total amount for this invoice.
+            </summary>
+        </member>
+        <member name="P:Acme.BusinessApi.Libraries.Contracts.Events.InvoiceBecameOverdueEvent.ExpiresAtUtcTime">
+            <summary>
+            When the invoice expires, i.e. the latest time that it has to be paid
+            </summary>
+        </member>
+        <member name="T:Acme.BusinessApi.Libraries.Contracts.Events.InvoiceWasIssuedEvent">
+            <summary>
+            This event is published whenever a new Invoices has been published.
+            </summary>
+        </member>
+        <member name="P:Acme.BusinessApi.Libraries.Contracts.Events.InvoiceWasIssuedEvent.Metadata">
+            <inheritdoc />
+        </member>
+        <member name="P:Acme.BusinessApi.Libraries.Contracts.Events.InvoiceWasIssuedEvent.InvoiceId">
+            <summary>
+            The id of the invoice
+            </summary>
+        </member>
+        <member name="P:Acme.BusinessApi.Libraries.Contracts.Events.InvoiceWasIssuedEvent.TotalAmount">
+            <summary>
+            The total amount for this invoice.
+            </summary>
+        </member>
+        <member name="P:Acme.BusinessApi.Libraries.Contracts.Events.InvoiceWasIssuedEvent.IssuedAtUtcTime">
+            <summary>
+            When the invoice was created, i.e. the time when it can be accounted for.
+            </summary>
+        </member>
+        <member name="T:Acme.BusinessApi.Libraries.Contracts.Events.InvoiceWasPaidInFullEvent">
+            <summary>
+            This event is published whenever an Invoice has been paid in full.
+            </summary>
+        </member>
+        <member name="P:Acme.BusinessApi.Libraries.Contracts.Events.InvoiceWasPaidInFullEvent.Metadata">
+            <inheritdoc />
+        </member>
+        <member name="P:Acme.BusinessApi.Libraries.Contracts.Events.InvoiceWasPaidInFullEvent.InvoiceId">
+            <summary>
+            The id of the invoice
+            </summary>
+        </member>
+        <member name="P:Acme.BusinessApi.Libraries.Contracts.Events.InvoiceWasPaidInFullEvent.TotalAmount">
+            <summary>
+            The total amount for this invoice. The amount paid could theoretically have been more.
+            </summary>
+        </member>
+        <member name="P:Acme.BusinessApi.Libraries.Contracts.Events.InvoiceWasPaidInFullEvent.ExpiresAtUtcTime">
+            <summary>
+            When the invoice expires, i.e. the latest time that it has to be paid
+            </summary>
+        </member>
+        <member name="P:Acme.BusinessApi.Libraries.Contracts.Events.InvoiceWasPaidInFullEvent.PaidAtUtcTime">
+            <summary>
+            The actual time when the invoice was paid, or at least when our organization noted it as paid
+            </summary>
+        </member>
+    </members>
+</doc>

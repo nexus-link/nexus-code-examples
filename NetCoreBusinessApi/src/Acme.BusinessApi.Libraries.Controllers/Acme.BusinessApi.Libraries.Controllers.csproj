@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Nexus.Link.Libraries.Crud.AspNet" Version="2.0.9" />
+    <PackageReference Include="Nexus.Link.Libraries.Web.AspNet" Version="2.5.5" />
+    <PackageReference Include="Nexus.Link.Services.Controllers" Version="1.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Acme.BusinessApi.Libraries.Contracts\Acme.BusinessApi.Libraries.Contracts.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <PackageId>Acme.BusinessApi.Libraries.Controllers</PackageId>
+    <Version>1.4.6</Version>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageTags>acme</PackageTags>
+    <Authors>XLENT Link</Authors>
+    <PackageProjectUrl>https://github.com/acme-nexus/BusinessApi</PackageProjectUrl>
+    <PackageLanguage>en-US</PackageLanguage>
+    <Description>Base Controllers to be inherited by Nexus Adapter controllers.</Description>
+    <Copyright>Copyright ©2019 Xlent Link AB</Copyright>
+    <IncludeSymbols>true</IncludeSymbols>
+    <PackageReleaseNotes>
+      1.4.6 Bump
+      1.4.3 Introduced the Api capability
+      1.3.1 Introduced the Activation capability
+      1.2.10 Bump
+      1.0.0 First Release
+    </PackageReleaseNotes>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>Acme.BusinessApi.Libraries.Controllers.xml</DocumentationFile>
+  </PropertyGroup>
+</Project>

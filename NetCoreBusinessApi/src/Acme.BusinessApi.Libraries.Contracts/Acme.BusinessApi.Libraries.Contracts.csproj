@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageReleaseNotes>1.0.0 First release</PackageReleaseNotes>
+    <RootNamespace>Acme.BusinessApi.Libraries.Contracts</RootNamespace>
+    <AssemblyName>Acme.BusinessApi.Libraries.Contracts</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Nexus.Link.Libraries.Crud" Version="2.0.2" />
+    <PackageReference Include="Nexus.Link.Services.Contracts" Version="1.0.8" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <PackageId>Acme.BusinessApi.Libraries.Contracts</PackageId>
+    <Version>1.2.4</Version>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageTags>acme</PackageTags>
+    <Authors>XLENT Link</Authors>
+    <PackageProjectUrl>https://github.com/acme-nexus/BusinessApi</PackageProjectUrl>
+    <PackageLanguage>en-US</PackageLanguage>
+    <Description>Contracts to be fulfilled by Nexus adapters</Description>
+    <Copyright>Copyright ©2019 Xlent Link AB</Copyright>
+    <IncludeSymbols>true</IncludeSymbols>
+    <PackageReleaseNotes>
+      1.2.4 BUmp
+      1.2.1 Introduced the Activation capability
+      1.1.7 Bump
+      1.1.0 Added Invoicing capability
+      1.0.0 First contracts
+    </PackageReleaseNotes>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>Acme.BusinessApi.Libraries.Contracts.xml</DocumentationFile>
+  </PropertyGroup>
+
+</Project>

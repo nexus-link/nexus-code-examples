@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp2.2</TargetFramework>
+		<DocumentationFile>C:\Git\Acme\BusinessApi\src\Acme.BusinessApi.Service\Acme.BusinessApi.Service.xml</DocumentationFile>
+		<ApplicationIcon />
+		<OutputType>Exe</OutputType>
+		<StartupObject />
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Logic\**" />
+	  <Content Remove="Logic\**" />
+	  <EmbeddedResource Remove="Logic\**" />
+	  <None Remove="Logic\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="wwwroot\" />
+	</ItemGroup>
+
+	<ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Nexus.Link.Services.Controllers" Version="1.1.1" />
+	  <PackageReference Include="Nexus.Link.Services.Implementations" Version="1.3.8" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Acme.BusinessApi.Libraries.Contracts\Acme.BusinessApi.Libraries.Contracts.csproj" />
+	  <ProjectReference Include="..\Acme.BusinessApi.Libraries.Controllers\Acme.BusinessApi.Libraries.Controllers.csproj" />
+	  <ProjectReference Include="..\Acme.BusinessApi.Libraries.Sdk\Acme.BusinessApi.Libraries.Sdk.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Update="appsettings.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+</Project>
