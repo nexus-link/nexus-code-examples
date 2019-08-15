@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>C:\Git\Xlent.Lever\nexus-code-examples\NetCoreAdapter\Crm.NexusAdapter.Service\Crm.NexusAdapter.Service.xml</DocumentationFile>
+    <DocumentationFile>Crm.NexusAdapter.Service.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
